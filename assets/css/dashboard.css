@@ -1,0 +1,66 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+.huge {
+  font-size: 40px;
+}
+.panel-blue {
+  border-color: #6A9ECA;
+}
+.panel-blue > .panel-heading {
+  border-color: #6A9ECA;
+  color: white;
+  background-color: #6A9ECA;
+}
+.panel-blue > a {
+  color: #6A9ECA;
+}
+.panel-blue > a:hover {
+  color: #6A9ECA;
+}
+
+.panel-green {
+  border-color: #88CB88;
+}
+.panel-green > .panel-heading {
+  border-color: #88CB88;
+  color: white;
+  background-color: #88CB88;
+}
+.panel-green > a {
+  color: #88CB88;
+}
+.panel-green > a:hover {
+  color: #88CB88;
+}
+.panel-red {
+  border-color: #E3817F;
+}
+.panel-red > .panel-heading {
+  border-color: #E3817F;
+  color: white;
+  background-color: #E3817F;
+}
+.panel-red > a {
+  color: #E3817F;
+}
+.panel-red > a:hover {
+  color: #E3817F;
+}
+.panel-yellow {
+  border-color: #F4C37E;
+}
+.panel-yellow > .panel-heading {
+  border-color: #F4C37E;
+  color: white;
+  background-color: #F4C37E;
+}
+.panel-yellow > a {
+  color: #F4C37E;
+}
+.panel-yellow > a:hover {
+  color: #F4C37E;
+}
