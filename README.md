@@ -1,1 +1,2 @@
-# ur-apartments
+# inspinia
+Bootstrap admin theme
