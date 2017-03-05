@@ -2839,13 +2839,13 @@ video {
 #page-wrapper {
   padding: 0 15px;
   min-height: 568px;
-  position: relative !important;
+  position: relative;
 }
 @media (min-width: 768px) {
   #page-wrapper {
-    position: inherit;
+    position: relative;
     margin: 0 0 0 240px;
-    min-height: 1000px;
+    min-height: 100vh;
   }
 }
 .title-action {
@@ -3109,7 +3109,6 @@ code {
   background-color: #ffffff;
   border-color: #e7eaec;
   border-image: none;
-  border-style: solid solid none;
   border-width: 4px 0px 0;
   color: inherit;
   margin-bottom: 0;
@@ -4936,9 +4935,9 @@ body.skin-3 {
 }
 @media (min-width: 768px) {
   #page-wrapper {
-    position: inherit;
+    position: relative;
     margin: 0 0 0 220px;
-    min-height: 1200px;
+    min-height: 100vh;
   }
   .navbar-static-side {
     z-index: 101;
