@@ -64,3 +64,33 @@
 .panel-yellow > a:hover {
   color: #F4C37E;
 }
+
+.big-buttons {
+  margin-top: 60px;
+}
+.big-right {
+  text-align: right;
+}
+.big-left {
+  text-align: left;
+}
+
+.big-buttons .btn {
+  border-radius: 35px;
+  padding: 16px 30px;
+    font-size: 20px;
+    line-height: 1.33;
+}
+
+@media screen and (max-width: 768px) {
+    .big-buttons {
+      margin-top: 20px;
+    }
+    .big-right {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .big-left {
+      text-align: center;
+    }
+}
