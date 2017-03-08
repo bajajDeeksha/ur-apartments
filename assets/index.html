@@ -6,19 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard</title>
+    <title>Asahi Service Company - Admin</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
-
-    <!-- Gritter -->
-    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
-
-    <link href="css/animate.css" rel="stylesheet">
+    
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
 
 </head>
 
@@ -31,7 +25,7 @@
                         <div class="dropdown profile-element"> <span>
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span style="font-size: 20px; text-align: center;" class="block m-t-xs"> <strong class="font-bold">Kamal Ishikawa</strong>
+                            <span class="clear"> <span style="text-align: center;" class="block m-t-xs"> <strong class="font-bold">Kamal Ishikawa</strong>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="login.html">Logout</a></li>
                             </ul>
@@ -46,25 +40,25 @@
                     <li>
                         <a href="#"><i class="fa fa-home"></i> <span class="nav-label"> Apartments </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="">Add Apartments</a></li>
+                            <li><a href="add_apartment.html">Add Apartments</a></li>
                             <li><a href="">Delete Apartments</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="">Add Users</a></li>
+                            <li><a href="add_user.html">Add Users</a></li>
                             <li><a href="">Manage Users</a></li>
                         </ul>
                     </li>
                     <li class="special_link">
-                        <a href=""><i class="fa fa-database"></i> <span class="nav-label">View The Website!</span></a>
+                        <a href="test.html"><i class="fa fa-database"></i> <span class="nav-label">View The Website!</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -88,12 +82,89 @@
             </nav>
         </div>
         <div class="row  border-bottom white-bg dashboard-header">
-
+           <h2 align="center">Welcome To Asahi Service Company</h2>
         </div>
-        <div class="row">
-
-        </div>
-
+        <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-blue">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-home fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>Apartment Listings</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="view_apartments.html">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-users fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Active Users</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="view_users.html">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-handshake-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">4</div>
+                                    <div>Operators</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="view_operators.html">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row big-buttons">
+                <div class="col-sm-6 big-right">
+                    <a href="add_apartment.html">
+                        <button class="btn btn-primary" type="submit">Add Apartment</button>
+                    </a>
+                </div>
+                <div class="col-sm-6 big-left">
+                    <a href="add_user.html">
+                        <button class="btn btn-primary" type="submit">Add User</button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,7 +172,6 @@
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
