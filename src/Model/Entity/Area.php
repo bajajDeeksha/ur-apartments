@@ -4,24 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
+ * Area Entity
  *
  * @property int $id
- * @property string $name
- * @property string $username
- * @property string $password
- * @property string $email
- * @property int $auth
- * @property int $validity
- * @property int $state
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
+ * @property string $ward
+ * @property string $prefecture
+ *
+ * @property \App\Model\Entity\Apartment[] $apartments
  */
-class User extends Entity
+class Area extends Entity
 {
-
-    const AUTH = [1=>'admin', 2=>'operator', 3=>'guest'];
-
 
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -35,14 +27,5 @@ class User extends Entity
     protected $_accessible = [
         '*' => true,
         'id' => false
-    ];
-
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
-    protected $_hidden = [
-        'password'
     ];
 }

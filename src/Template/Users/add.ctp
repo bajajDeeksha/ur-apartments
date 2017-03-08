@@ -18,9 +18,9 @@
             echo $this->Form->control('username');
             echo $this->Form->control('password');
             echo $this->Form->control('email');
-            echo $this->Form->control('auth');
+            echo $this->Form->control('auth', ['type' => 'select', 'options' => $auth]);
             echo $this->Form->control('validity');
-            echo $this->Form->control('state');
+            echo $this->Form->control('state', ['type' => 'hidden', 'value' => 1]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
