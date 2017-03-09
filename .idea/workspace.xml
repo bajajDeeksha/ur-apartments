@@ -2,269 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6014e3a5-1fb5-4733-9ec9-c29a527b9781" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/patterns/header-profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/chosen/chosen-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/chosen/chosen-sprite@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/iCheck/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/iCheck/green@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/bootstrap-colorpicker/alpha-horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/bootstrap-colorpicker/alpha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/bootstrap-colorpicker/hue-horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/bootstrap-colorpicker/hue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/bootstrap-colorpicker/saturation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sort.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sprite-skin-flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sprite-skin-flat2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sprite-skin-nice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/sprite-skin-simple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/spritemap.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/images/spritemap@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/animated-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/email_templates/img/header.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-ExtraBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-LightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-Semibold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/OpenSans/OpenSans-SemiboldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/animated-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/customize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/dashboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/chosen/chosen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/footable/footable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/footable/footable.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/iCheck/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/plugins/switchery/switchery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/css/style.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/email_templates/action.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/email_templates/alert.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/email_templates/billing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/email_templates/styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/HELP-US-OUT.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/animated.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/bordered-pulled.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/fixed-width.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/font-awesome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/larger.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/path.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/rotated-flipped.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/screen-reader.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/stacked.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_animated.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_core.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_fixed-width.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_larger.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_list.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_path.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_screen-reader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_stacked.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/font-awesome/scss/font-awesome.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/inspinia.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/jquery-2.1.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/jquery-ui-1.10.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/jquery-ui.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/chosen/chosen.jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/footable/footable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/footable/footable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/iCheck/icheck.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery-ui-i18n.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-af.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ar-DZ.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-az.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-be.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-bg.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-bs.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ca.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-cs.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-cy-GB.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-da.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-de.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-el.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-AU.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-GB.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-NZ.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-eo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-es.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-et.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-eu.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fa.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr-CA.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr-CH.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-gl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-he.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hu.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hy.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-id.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-is.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-it.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ja.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ka.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-kk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-km.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ko.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ky.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lb.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lt.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-mk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ml.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ms.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nb.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nl-BE.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nn.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-no.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pt-BR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pt.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-rm.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ro.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ru.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sq.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sr-SR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ta.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-th.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-tj.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-tr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-uk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-vi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-CN.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-HK.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-TW.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/jquery-ui/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/metisMenu/jquery.metisMenu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/pace/pace.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/js/plugins/switchery/switchery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/add_apartment.html" afterPath="$PROJECT_DIR$/assets/add_apartment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/add_user.html" afterPath="$PROJECT_DIR$/assets/add_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/customize.css" afterPath="$PROJECT_DIR$/assets/css/customize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/dashboard.css" afterPath="$PROJECT_DIR$/assets/css/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/login.css" afterPath="$PROJECT_DIR$/assets/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/plugins/footable/footable.css" afterPath="$PROJECT_DIR$/assets/css/plugins/footable/footable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/plugins/footable/footable.min.css" afterPath="$PROJECT_DIR$/assets/css/plugins/footable/footable.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/assets/font-awesome/HELP-US-OUT.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/animated.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/bordered-pulled.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/fixed-width.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/larger.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/path.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/rotated-flipped.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/screen-reader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/stacked.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_animated.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_core.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_fixed-width.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_larger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_path.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_screen-reader.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_stacked.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/font-awesome.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/plugins/footable/footable.js" afterPath="$PROJECT_DIR$/assets/js/plugins/footable/footable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/plugins/footable/footable.min.js" afterPath="$PROJECT_DIR$/assets/js/plugins/footable/footable.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/login.html" afterPath="$PROJECT_DIR$/assets/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/view_apartments.html" afterPath="$PROJECT_DIR$/assets/view_apartments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/view_operators.html" afterPath="$PROJECT_DIR$/assets/view_operators.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/view_users.html" afterPath="$PROJECT_DIR$/assets/view_users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/AppController.php" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UsersController.php" afterPath="$PROJECT_DIR$/src/Controller/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Apartments/add.ctp" afterPath="$PROJECT_DIR$/src/Template/Apartments/add.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/default.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Users/dashboard.ctp" afterPath="$PROJECT_DIR$/src/Template/Users/dashboard.ctp" />
     </list>
     <ignored path="ur-net.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -311,8 +52,28 @@
       <file leaf-file-name="dashboard.ctp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Template/Users/dashboard.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Apartments/add.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_apartment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/add_apartment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3218">
+              <caret line="248" column="46" selection-start-line="248" selection-start-column="46" selection-end-line="248" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -321,8 +82,8 @@
       <file leaf-file-name="default.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -331,14 +92,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/index.html">
+      <file leaf-file-name="add_bkup.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Apartments/add_bkup.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="82" column="14" selection-start-line="19" selection-start-column="4" selection-end-line="82" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -372,7 +131,6 @@
         <option value="$PROJECT_DIR$/config/Migrations/20170308022746_Prefectures.php" />
         <option value="$PROJECT_DIR$/config/Migrations/20170308024752_Areas.php" />
         <option value="$PROJECT_DIR$/config/Migrations/20170307090328_Apartments.php" />
-        <option value="$PROJECT_DIR$/src/Template/Apartments/add.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/ApartmentsController.php" />
         <option value="$PROJECT_DIR$/src/Template/Apartments/index.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Users/index.ctp" />
@@ -386,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/Template/Users/login.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/UsersController.php" />
         <option value="$PROJECT_DIR$/assets/index.html" />
+        <option value="$PROJECT_DIR$/src/Template/Apartments/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Users/dashboard.ctp" />
       </list>
@@ -474,7 +233,51 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ur-net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ur-net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ur-net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ur-net" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,14 +292,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Template" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Users" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -598,11 +393,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Template/Apartments" />
       <recent name="$PROJECT_DIR$/src/Template/Layout" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/webroot" />
       <recent name="$PROJECT_DIR$/src/Template/Users" />
-      <recent name="$PROJECT_DIR$/src/Controller/Component" />
     </key>
   </component>
   <component name="RunManager">
@@ -653,12 +448,12 @@
       <workItem from="1488531136065" duration="5318000" />
       <workItem from="1488784157498" duration="16075000" />
       <workItem from="1488956124055" duration="1244000" />
-      <workItem from="1488960927111" duration="16197000" />
+      <workItem from="1488960927111" duration="21013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38834000" />
+    <option name="totallyTimeSpent" value="43650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="24" width="1731" height="907" extended-state="6" />
@@ -699,22 +494,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/ApartmentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Apartments/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Users/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -889,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Apartments/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/tables.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1061,18 +832,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="82" column="14" selection-start-line="19" selection-start-column="4" selection-end-line="82" selection-end-column="14" />
+        <state relative-caret-position="1005">
+          <caret line="67" column="85" selection-start-line="67" selection-start-column="85" selection-end-line="67" selection-end-column="85" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Apartments/add_bkup.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/inspinia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1080,10 +867,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/add_apartment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3218">
+          <caret line="248" column="46" selection-start-line="248" selection-start-column="46" selection-end-line="248" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Apartments/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Users/dashboard.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

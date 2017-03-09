@@ -6,6 +6,7 @@
 
     <title><?= $title ?></title>
 
+    <?= $this->Html->css('plugins/chosen/chosen.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
     <?= $this->Html->css('../font-awesome/css/font-awesome.css') ?>
     <?= $this->Html->css('animate.css') ?>
@@ -72,7 +73,6 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <span class="m-r-sm text-muted welcome-message">Welcome to ASAHI Service Company</span>
                     </li>
                     <li>
                         <a href="login.html">
@@ -82,14 +82,13 @@
                 </ul>
             </nav>
         </div>
-    <div class="row  border-bottom white-bg dashboard-header">
-        <h2 align="center">Welcome To Asahi Service Company</h2>
-    </div>
 
     <!-- Mainly scripts -->
     <?= $this->Html->script('jquery-2.1.1.js') ?>
     <?= $this->Html->script('bootstrap.min.js') ?>
     <?= $this->Html->script('inspinia.js') ?>
+    <?= $this->Html->script('plugins/chosen/chosen.jquery.js') ?>
+    <?= $this->Html->script('plugins/slimscroll/jquery.slimscroll.min.js') ?>
     <?= $this->Html->script('plugins/metisMenu/jquery.metisMenu.js') ?>
     <?= $this->Html->script('plugins/pace/pace.min.js') ?>
     <?= $this->Html->script('plugins/jquery-ui/jquery-ui.min.js') ?>
