@@ -9,12 +9,15 @@
                     <h5>Fill the form with Apartment Information</h5>
                 </div>
                 <div class="ibox-content">
-                    <form method="get" class="form-horizontal">
+                        <?= $this->Form->create($apartment, ['class' => 'form-horizontal']); ?>
                         <div class="form-group"><label class="col-sm-2 control-label">ID</label>
                             <div class="col-sm-10"><label class="form-control-static">SHI-123</label></div>
                         </div>
-                        <div class="form-group"><label class="col-sm-2 control-label">Name</label>
-                            <div class="col-sm-10"><input placeholder="Enter the name of the building" type="text" name="name" class="form-control"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Name</label>
+                                <div class="col-sm-10">
+                                    <?= $this->Form->control('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Enter the name of the building', 'label' => false]); ?>
+                                </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Address</label>
                             <div class="col-sm-10"><input placeholder="Enter the address" type="text" class="form-control" name="address"></div>
