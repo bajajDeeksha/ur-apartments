@@ -29,6 +29,20 @@ use Cake\ORM\Entity;
 class Apartment extends Entity
 {
 
+    const MODEL = [
+        1=>'1K', 2=>'1DK', 3=>'1LDK',
+        4=>'2K', 5=>'2DK', 6=>'2LDK',
+        7=>'3K', 8=>'3DK', 9=>'3LDK',
+        10=>'4DK', 11=>'4LDK',
+        12=>'5LDK', 13=>'6LDK',
+
+    ];
+
+    const FACILITIES = [
+        1=> 'Facility1', 2=> 'Facility2', 3=> 'Facility3',
+        4=> 'Facility4', 5=> 'Facility5', 6=> 'Facility6'
+    ];
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *

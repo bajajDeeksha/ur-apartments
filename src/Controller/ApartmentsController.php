@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\Apartment;
 
 /**
  * Apartments Controller
@@ -52,7 +53,11 @@ class ApartmentsController extends AppController
     public function add()
     {
         $apartment = $this->Apartments->newEntity();
+        $model = Apartment::MODEL;
+        $facilities = Apartment::FACILITIES;
+        $title = 'Add Apartment';
         if ($this->request->is('post')) {
+             var_dump($this->request->data);die;
             $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
             if ($this->Apartments->save($apartment)) {
                 $this->Flash->success(__('The apartment has been saved.'));
@@ -62,7 +67,7 @@ class ApartmentsController extends AppController
             $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
         }
         $areas = $this->Apartments->Areas->find('all')->toArray();
-        $this->set(compact('apartment', 'areas'));
+        $this->set(compact('apartment', 'areas', 'model', 'facilities', 'title'));
         $this->set('_serialize', ['apartment']);
     }
 

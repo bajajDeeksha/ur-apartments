@@ -10,9 +10,6 @@
                 </div>
                 <div class="ibox-content">
                         <?= $this->Form->create($apartment, ['class' => 'form-horizontal']); ?>
-                        <div class="form-group"><label class="col-sm-2 control-label">ID</label>
-                            <div class="col-sm-10"><label class="form-control-static">SHI-123</label></div>
-                        </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
@@ -20,131 +17,77 @@
                                 </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Address</label>
-                            <div class="col-sm-10"><input placeholder="Enter the address" type="text" class="form-control" name="address"></div>
+                            <div class="col-sm-10">
+                                <?= $this->Form->control('address', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Enter the address', 'label' => false]); ?>
+                            </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Prefecture / Ward </label>
                             <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select data-placeholder="Select all the Facilities available" name="prefecture" class="form-control chosen-select" style="width:100%;">
-                                            <option value="">Select</option>
-                                            <option value="United States">United States</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="Afghanistan">Afghanistan</option>
-                                            <option value="Aland Islands">Aland Islands</option>
-                                            <option value="Albania">Albania</option>
-                                            <option value="Algeria">Algeria</option>
-                                            <option value="American Samoa">American Samoa</option>
-                                            <option value="Andorra">Andorra</option>
-                                            <option value="Angola">Angola</option>
-                                            <option value="Anguilla">Anguilla</option>
-                                            <option value="Antarctica">Antarctica</option>
-                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                            <option value="Argentina">Argentina</option>
-                                            <option value="Armenia">Armenia</option>
-                                        </select>
+                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'empty' => true, 'placeholder' => 'Select prefecture', 'label' => false]); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <select data-placeholder="Select all the Facilities available" class="form-control chosen-select" style="width:100%;">
-                                            <option value="">Select</option>
-                                            <option value="United States">United States</option>
-                                            <option value="United Kingdom">United Kingdom</option>
-                                            <option value="Afghanistan">Afghanistan</option>
-                                            <option value="Aland Islands">Aland Islands</option>
-                                            <option value="Albania">Albania</option>
-                                            <option value="Algeria">Algeria</option>
-                                            <option value="American Samoa">American Samoa</option>
-                                            <option value="Andorra">Andorra</option>
-                                            <option value="Angola">Angola</option>
-                                            <option value="Anguilla">Anguilla</option>
-                                            <option value="Antarctica">Antarctica</option>
-                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                            <option value="Argentina">Argentina</option>
-                                            <option value="Armenia">Armenia</option>
-                                        </select>
+                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'options' => array_column($areas, 'ward'), 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Floor </label>
-                            <div class="col-sm-10"><input placeholder="Floor" name="floor" type="number" class="form-control"></div>
+                            <div class="col-sm-10">
+                                <?= $this->Form->control('floor', ['class' => 'form-control', 'min' => 1, 'type' => 'number', 'placeholder' => 'Floor', 'label' => false]); ?>
+                            </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Size </label>
                             <div class="col-sm-10">
-                                <div class="input-group"><input placeholder="Enter the size in m2" type="number" name="size" class="form-control"> <span class="input-group-addon">Meter Square</span></div>
+                                <div class="input-group">
+                                    <?= $this->Form->control('size', ['class' => 'form-control', 'min' => 0, 'type' => 'number', 'placeholder' => 'Enter the size in m2', 'label' => false]); ?>
+                                    <span class="input-group-addon">Meter Square</span></div>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Modal Plan </label>
                             <div class="col-sm-10">
-                                <select data-placeholder="Select the modal-plan" name="modal-plan" class="form-control chosen-select" style="width:100%;">
-                                    <option value="">Select</option>
-                                    <option value="United States">1K</option>
-                                    <option value="United Kingdom">1DK</option>
-                                    <option value="Afghanistan">1LDK</option>
-                                    <option value="Aland Islands">2DK</option>
-                                    <option value="Albania">2K</option>
-                                    <option value="Algeria">2LDK</option>
-                                    <option value="American Samoa">3DK</option>
-                                    <option value="Andorra">3LDK</option>
-                                    <option value="Angola">4K</option>
-                                    <option value="Anguilla">4DK</option>
-                                    <option value="Antarctica">4LDK</option>
-                                    <option value="Antigua and Barbuda">5LDK</option>
-                                    <option value="Argentina">6DK</option>
-                                    <option value="Armenia">6LDK</option>
-                                </select>
+                                <?= $this->Form->control('model_plan', ['class' => 'form-control chosen-select', 'options' => $model, 'empty' => true, 'placeholder' => 'Select modal plan', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Rent </label>
                             <div class="col-sm-10">
-                                <div class="input-group"><input placeholder="Enter the rent in Yen" type="number" name="rent" class="form-control"> <span class="input-group-addon">Yen</span></div>
+                                <div class="input-group">
+                                    <?= $this->Form->control('rent', ['class' => 'form-control', 'min' => 0, 'type' => 'number', 'placeholder' => 'Enter the rent in yen', 'label' => false]); ?>
+                                    <span class="input-group-addon">Yen</span></div>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Service Fees </label>
                             <div class="col-sm-10">
-                                <div class="input-group"><input placeholder="Enter the Service Fees in Yen" type="number" name="fees" class="form-control"> <span class="input-group-addon">Yen</span></div>
+                                <div class="input-group">
+                                    <?= $this->Form->control('service_fee', ['class' => 'form-control', 'min' => 0, 'type' => 'number', 'placeholder' => 'Enter the service fee in yen', 'label' => false]); ?>
+                                    <span class="input-group-addon">Yen</span></div>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Distance Information </label>
                             <div class="col-sm-10">
-                                <textarea placeholder="Enter the distance information from different stations." name="treffic" class="form-control" rows="4"></textarea>
+                                <?= $this->Form->control('traffic', ['class' => 'form-control', 'placeholder' => 'Enter the distance information from different stations.', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Facilities</label>
                             <div class="col-sm-10">
                                 <div>
-                                    <select data-placeholder="Select all the Facilities available" name="facilities" class="chosen-select" multiple style="width:100%;" tabindex="4">
-                                        <option value="">Select</option>
-                                        <option value="United States">United States</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Afghanistan">Afghanistan</option>
-                                        <option value="Aland Islands">Aland Islands</option>
-                                        <option value="Albania">Albania</option>
-                                        <option value="Algeria">Algeria</option>
-                                        <option value="American Samoa">American Samoa</option>
-                                        <option value="Andorra">Andorra</option>
-                                        <option value="Angola">Angola</option>
-                                        <option value="Anguilla">Anguilla</option>
-                                        <option value="Antarctica">Antarctica</option>
-                                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                        <option value="Argentina">Argentina</option>
-                                        <option value="Armenia">Armenia</option>
-                                    </select>
+                                    <?= $this->Form->control('facilities', ['class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'placeholder' => 'Select facilities', 'label' => false]); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-sm-2 control-label"> Comments </label>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Remarks </label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="comment" rows="4"></textarea>
+                                <?= $this->Form->control('remarks', ['class' => 'form-control', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group" align="center">
                             <div class="col-sm-12">
-                                <button class="btn btn-white" type="submit">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save changes</button>
+                                <?= $this->Html->link('Cancel', ['controller' => 'Users', 'action' => 'dashboard']) ?>
+                                <?= $this->Form->button('Save changes', ['class' => 'btn btn-primary', 'name' => 'save']); ?>
                             </div>
                         </div>
-                    </form>
+                    <?= $this->Form->end() ?>
                 </div>
             </div>
         </div>
