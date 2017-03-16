@@ -13,6 +13,7 @@
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('customize.css') ?>
     <?= $this->Html->css('dashboard.css') ?>
+    <?= $this->Html->css('plugins/switchery/switchery.css') ?>
 
 </head>
 <body>
@@ -92,6 +93,10 @@
     <?= $this->Html->script('plugins/metisMenu/jquery.metisMenu.js') ?>
     <?= $this->Html->script('plugins/pace/pace.min.js') ?>
     <?= $this->Html->script('plugins/jquery-ui/jquery-ui.min.js') ?>
+    <!-- Switchery -->
+    <?= $this->Html->script('plugins/switchery/switchery.js') ?>
+    <!-- iCheck -->
+    <?= $this->Html->script('plugins/iCheck/icheck.min.js') ?>
 
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

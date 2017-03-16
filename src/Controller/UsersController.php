@@ -53,9 +53,11 @@ class UsersController extends AppController
     {
         $user = $this->Users->newEntity();
         $auth = User::AUTH;
+        $title = 'User|Add';
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $user->password = md5($this->request->data['password']);
+//            var_dump($user);die;
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -63,8 +65,8 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact(['user', 'auth']));
-        $this->set('_serialize', ['user', 'auth']);
+        $this->set(compact('user', 'auth', 'title'));
+        $this->set('_serialize', ['user']);
     }
 
     /**
