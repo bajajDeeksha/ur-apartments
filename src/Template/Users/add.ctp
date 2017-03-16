@@ -71,7 +71,7 @@
                     <?= $this->Form->create($user, ['class' => 'form-horizontal']); ?>
                         <div class="form-group" align="right">
                             <label class="control-label"> Is The User an Operator </label>
-                            <input type="checkbox" id="isOperator" class="js-switch" />
+                            <?= $this->Form->checkbox('auth', ['class' => 'js-switch','label' => false]); ?>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
