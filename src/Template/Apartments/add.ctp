@@ -25,10 +25,12 @@
                             <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-md-6">
-                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'empty' => true, 'placeholder' => 'Select prefecture', 'label' => false]); ?>
+                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'onchange'=>"document.getElementById('pref_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select prefecture', 'label' => false]); ?>
+                                            <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'options' => array_column($areas, 'ward'), 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
+                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'options' => array_column($areas, 'ward'), 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
+                                        <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content']); ?>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
             <div class="row  border-bottom white-bg dashboard-header">
-                <h2 align="center">Guest Information</h2>
+                <h2 align="center">Operators Information</h2>
             </div>
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">

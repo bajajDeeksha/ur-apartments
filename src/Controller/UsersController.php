@@ -21,9 +21,34 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'conditions' => [
+                'Users.auth' => 0
+            ]
+        ];
         $users = $this->paginate($this->Users);
+        $title = 'User|List';
 
-        $this->set(compact('users'));
+        $this->set(compact('users', 'title'));
+        $this->set('_serialize', ['users']);
+    }
+
+    /**
+     * Operator Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function opindex()
+    {
+        $this->paginate = [
+            'conditions' => [
+                'Users.auth' => 1
+            ]
+        ];
+        $users = $this->paginate($this->Users);
+        $title = 'User|List|operators';
+
+        $this->set(compact('users', 'title'));
         $this->set('_serialize', ['users']);
     }
 
@@ -65,31 +90,6 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $this->set(compact('user', 'auth', 'title'));
-        $this->set('_serialize', ['user']);
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
-        }
-        $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
 

@@ -52,13 +52,14 @@ class ApartmentsController extends AppController
      */
     public function add()
     {
+        $this->loadModel('Areas');
         $apartment = $this->Apartments->newEntity();
         $model = Apartment::MODEL;
         $facilities = Apartment::FACILITIES;
-        $title = 'Add Apartment';
+        $title = 'Apartment|Add';
         if ($this->request->is('post')) {
-             var_dump($this->request->data);die;
             $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
+            $apartment->area_id = $this->Areas->find()->select('Areas.id')->where(['Areas.ward' => $apartment->selected_ward])->andWhere(['Areas.prefecture' => $apartment->selected_pref]);
             if ($this->Apartments->save($apartment)) {
                 $this->Flash->success(__('The apartment has been saved.'));
 
@@ -83,32 +84,6 @@ class ApartmentsController extends AppController
         }
         print_r($data);
         //return $data;
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id Apartment id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $apartment = $this->Apartments->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
-            if ($this->Apartments->save($apartment)) {
-                $this->Flash->success(__('The apartment has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
-        }
-        $areas = $this->Apartments->Areas->find('list', ['limit' => 200]);
-        $this->set(compact('apartment', 'areas'));
-        $this->set('_serialize', ['apartment']);
     }
 
     /**

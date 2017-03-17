@@ -1,65 +1,6 @@
 <div class="row  border-bottom white-bg dashboard-header">
     <h2 align="center">Add User</h2>
 </div>
-<script>
-
-    // chosen-select jQuery
-    var config = {
-        '.chosen-select'           : {},
-        '.chosen-select-deselect'  : {allow_single_deselect:true},
-        '.chosen-select-no-single' : {disable_search_threshold:10},
-        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-        '.chosen-select-width'     : {width:"95%"}
-    }
-    for (var selector in config) {
-        $(selector).chosen(config[selector]);
-    }
-
-    //iphone type checkbox
-    var elem = document.querySelector('.js-switch');
-    var text = new Switchery(elem, {  color: '#1AB394' });
-
-    $('#isOperator').change(function(){
-        if($(this).is(":checked")) {
-            $("#validity").attr("disabled", true);
-            $('#validity_chosen').addClass("chosen-disabled");
-        } else {
-            $("#validity").removeAttr("disabled");
-            $('#validity_chosen').removeClass('chosen-disabled');
-        }
-    });
-
-    // Create a new password
-    function getPass() {
-    $(".getNewPass").click(function(){
-        var field = $(this).closest('div').find('input[rel="gp"]');
-        field.val(randString(field));
-    });
-    }
-
-    // Generate a password string
-    function randString(id){
-        var dataSet = $(id).attr('data-character-set').split(',');
-        var possible = '';
-        if($.inArray('a-z', dataSet) >= 0){
-            possible += 'abcdefghijklmnopqrstuvwxyz';
-        }
-        if($.inArray('A-Z', dataSet) >= 0){
-            possible += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        }
-        if($.inArray('0-9', dataSet) >= 0){
-            possible += '0123456789';
-        }
-        if($.inArray('#', dataSet) >= 0){
-            possible += '![]{}()%&*$#^<>~@|';
-        }
-        var text = '';
-        for(var i=0; i < $(id).attr('data-size'); i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-        return text;
-    }
-</script>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
@@ -71,7 +12,7 @@
                     <?= $this->Form->create($user, ['class' => 'form-horizontal']); ?>
                         <div class="form-group" align="right">
                             <label class="control-label"> Is The User an Operator </label>
-                            <?= $this->Form->checkbox('auth', ['class' => 'js-switch','label' => false]); ?>
+                            <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isOperator', 'label' => false]); ?>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
@@ -88,7 +29,7 @@
                                 <div class="input-group">
                                     <?= $this->Form->control('password', ['class' => 'form-control', 'name' => 'password', 'data-size' => 10, 'type' => 'text', 'data-character-set' => 'a-z,A-Z,0-9,#', 'rel' => 'gp','placeholder' => 'Enter the Password', 'label' => false]); ?>
                                     <span class="input-group-btn">
-                                        <?= $this->Form->button('<i class="fa fa-magic" aria-hidden="true"></i>', ['type'=> 'button', 'onclick' => 'getPass();', 'class' => 'btn btn-primary getNewPass']); ?>
+                                        <?= $this->Form->button('<i class="fa fa-magic" aria-hidden="true"></i>', ['type'=> 'button', 'class' => 'btn btn-primary getNewPass']); ?>
                                     </span>
                                 </div>
                             </div>
@@ -123,3 +64,62 @@
         </div>
     </div>
 </div>
+<script>
+
+    // chosen-select jQuery
+    var config = {
+        '.chosen-select'           : {},
+        '.chosen-select-deselect'  : {allow_single_deselect:true},
+        '.chosen-select-no-single' : {disable_search_threshold:10},
+        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+        '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
+
+    //iphone type checkbox
+    var elem = document.querySelector('.js-switch');
+    var text = new Switchery(elem, {  color: '#1AB394' });
+
+    $('#isOperator').change(function(){
+        if($(this).is(":checked")) {
+            $("#dates").hide();
+            $('#validity_chosen').hide();
+        } else {
+            console.log("say bye");
+            $("#dates").show();
+            $('#validity_chosen').show();
+        }
+    });
+
+    // Create a new password
+    $(".getNewPass").click(function(){
+        var field = $(this).closest('div').find('input[rel="gp"]');
+        field.val(randString(field));
+    });
+
+
+    // Generate a password string
+    function randString(id){
+        var dataSet = $(id).attr('data-character-set').split(',');
+        var possible = '';
+        if($.inArray('a-z', dataSet) >= 0){
+            possible += 'abcdefghijklmnopqrstuvwxyz';
+        }
+        if($.inArray('A-Z', dataSet) >= 0){
+            possible += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        }
+        if($.inArray('0-9', dataSet) >= 0){
+            possible += '0123456789';
+        }
+        if($.inArray('#', dataSet) >= 0){
+            possible += '![]{}()%&*$#^<>~@|';
+        }
+        var text = '';
+        for(var i=0; i < $(id).attr('data-size'); i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    }
+</script>

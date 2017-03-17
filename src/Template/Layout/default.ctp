@@ -17,6 +17,8 @@
 
 </head>
 <body>
+
+
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -64,14 +66,6 @@
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                        </div>
-                    </form>
-                </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
                     </li>
@@ -89,7 +83,6 @@
     <?= $this->Html->script('bootstrap.min.js') ?>
     <?= $this->Html->script('inspinia.js') ?>
     <?= $this->Html->script('plugins/chosen/chosen.jquery.js') ?>
-    <?= $this->Html->script('plugins/slimscroll/jquery.slimscroll.min.js') ?>
     <?= $this->Html->script('plugins/metisMenu/jquery.metisMenu.js') ?>
     <?= $this->Html->script('plugins/pace/pace.min.js') ?>
     <?= $this->Html->script('plugins/jquery-ui/jquery-ui.min.js') ?>
@@ -104,5 +97,7 @@
     </div>
     <footer>
     </footer>
+        </div>
+    </div>
 </body>
 </html>

@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <?=
-                            $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Users', 'action' => 'index', '_full'=> true], ['target' => '_blank', 'escape' => false]);
+                            $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Users', 'action' => 'opindex', '_full'=> true], ['target' => '_blank', 'escape' => false]);
                         ?>
                     </div>
                 </div>
