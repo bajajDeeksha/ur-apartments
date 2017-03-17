@@ -34,15 +34,3 @@
 .middle-box h1 {
   font-size: 170px;
 }
-.card {
-  width: 100%;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid #dbdbdb;
-  background-color: #dbdbdb;
-}
-
-#guest-page .ibox-content {
-  background-color: transparent;
-  border: 0;
-}
