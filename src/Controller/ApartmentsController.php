@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\Apartment;
+use Cake\Filesystem\File;
 
 /**
  * Apartments Controller
@@ -51,10 +53,28 @@ class ApartmentsController extends AppController
      */
     public function add()
     {
+        $this->loadModel('Areas');
         $apartment = $this->Apartments->newEntity();
+        $model = Apartment::MODEL;
+        $facilities = Apartment::FACILITIES;
+        $title = 'Apartment|Add';
         if ($this->request->is('post')) {
             $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
+            $apartment->area_id = $this->Areas->find()->select('Areas.id')->where(['Areas.ward' => $apartment->selected_ward])->andWhere(['Areas.prefecture' => $apartment->selected_pref]);
+            if ($this->request->data['image1']){
+                $apartment->image1 = $this->Upload->saveImage($apartment['name'], 'image1' ,$this->request->data['image1']);
+            }
+            if ($this->request->data['image2']){
+                $apartment->image2 = $this->Upload->saveImage($apartment['name'], 'image2' ,$this->request->data['image2']);
+            }
+            if ($this->request->data['image3']){
+                $apartment->image3 = $this->Upload->saveImage($apartment['name'], 'image3' ,$this->request->data['image3']);
+            }
+            if ($this->request->data['image4']){
+                $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4' ,$this->request->data['image4']);
+            }
             if ($this->Apartments->save($apartment)) {
+
                 $this->Flash->success(__('The apartment has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -62,7 +82,7 @@ class ApartmentsController extends AppController
             $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
         }
         $areas = $this->Apartments->Areas->find('all')->toArray();
-        $this->set(compact('apartment', 'areas'));
+        $this->set(compact('apartment', 'areas', 'model', 'facilities', 'title'));
         $this->set('_serialize', ['apartment']);
     }
 
@@ -81,32 +101,6 @@ class ApartmentsController extends AppController
     }
 
     /**
-     * Edit method
-     *
-     * @param string|null $id Apartment id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $apartment = $this->Apartments->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
-            if ($this->Apartments->save($apartment)) {
-                $this->Flash->success(__('The apartment has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
-        }
-        $areas = $this->Apartments->Areas->find('list', ['limit' => 200]);
-        $this->set(compact('apartment', 'areas'));
-        $this->set('_serialize', ['apartment']);
-    }
-
-    /**
      * Delete method
      *
      * @param string|null $id Apartment id.
@@ -115,14 +109,22 @@ class ApartmentsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
         $apartment = $this->Apartments->get($id);
         if ($this->Apartments->delete($apartment)) {
+            $this->deleteImage('image1', $apartment['image1']);
+            $this->deleteImage('image2', $apartment['image2']);
+            $this->deleteImage('image3', $apartment['image3']);
+            $this->deleteImage('image4', $apartment['image4']);
             $this->Flash->success(__('The apartment has been deleted.'));
         } else {
             $this->Flash->error(__('The apartment could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function deleteImage($imageType, $imageName){
+        $file = new File(WWW_ROOT . 'img' . DS . 'uploads' . DS . $imageType . '/' . $imageName, false, 0777);
+        $file->delete();
     }
 }

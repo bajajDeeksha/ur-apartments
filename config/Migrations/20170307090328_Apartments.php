@@ -80,6 +80,11 @@ class Apartments extends AbstractMigration
             'limit' => 255,
             'null' => true,
         ]);
+        $table->addColumn('image4', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => true,
+        ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
             'null' => true,

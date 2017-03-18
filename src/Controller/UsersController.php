@@ -21,9 +21,34 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'conditions' => [
+                'Users.auth' => 0
+            ]
+        ];
         $users = $this->paginate($this->Users);
+        $title = 'User|List';
 
-        $this->set(compact('users'));
+        $this->set(compact('users', 'title'));
+        $this->set('_serialize', ['users']);
+    }
+
+    /**
+     * Operator Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function opindex()
+    {
+        $this->paginate = [
+            'conditions' => [
+                'Users.auth' => 1
+            ]
+        ];
+        $users = $this->paginate($this->Users);
+        $title = 'User|List|operators';
+
+        $this->set(compact('users', 'title'));
         $this->set('_serialize', ['users']);
     }
 
@@ -53,6 +78,7 @@ class UsersController extends AppController
     {
         $user = $this->Users->newEntity();
         $auth = User::AUTH;
+        $title = 'User|Add';
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $user->password = md5($this->request->data['password']);
@@ -63,32 +89,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact(['user', 'auth']));
-        $this->set('_serialize', ['user', 'auth']);
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
-        }
-        $this->set(compact('user'));
+        $this->set(compact('user', 'auth', 'title'));
         $this->set('_serialize', ['user']);
     }
 
@@ -123,12 +124,9 @@ class UsersController extends AppController
 
             $user = $this->Auth->identify();
             $this->request->session()->write('currentUser',$user);
-
-            if ($user && $user['state'] == 1) {
                 $this->Auth->setUser($user);
                 // ログイン時のリダイレクト
                 return $this->redirect($this->Auth->redirectUrl());
-            }
             //$this->Flash->error('Login Failed, Please check Username and Password');
         }
     }
@@ -141,6 +139,7 @@ class UsersController extends AppController
 
     public function dashboard()
     {
+        $this->Auth->config('authError', false);
         $title = 'Dashboard';
         $this->set(compact('title'));
     }
