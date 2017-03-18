@@ -4,42 +4,6 @@ $(document).ready(function () {
     // MetsiMenu
     $('#side-menu').metisMenu();
  
-    // Collapse ibox function
-    $('.collapse-link:not(.binded)').addClass("binded").click( function() {
-        var ibox = $(this).closest('div.ibox');
-        var button = $(this).find('i');
-        var content = ibox.find('div.ibox-content');
-        content.slideToggle(200);
-        button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-        ibox.toggleClass('').toggleClass('border-bottom');
-        setTimeout(function () {
-            ibox.resize();
-            ibox.find('[id^=map-]').resize();
-        }, 50);
-    });
- 
-    // Close ibox function
-    $('.close-link:not(.binded)').addClass("binded").click( function() {
-        var content = $(this).closest('div.ibox');
-        content.remove();
-    });
- 
-    // Small todo handler
-    $('.check-link:not(.binded)').addClass("binded").click( function(){
-        var button = $(this).find('i');
-        var label = $(this).next('span');
-        button.toggleClass('fa-check-square').toggleClass('fa-square-o');
-        label.toggleClass('todo-completed');
-        return false;
-    });
- 
-    // Append config box / Only for demo purpose
-    /*
-    $.get("skin-config.html", function (data) {
-        $('body').append(data);
-    });
-    */
- 
     // minimalize menu
     $('.navbar-minimalize:not(.binded)').addClass("binded").click(function () {
         $("body").toggleClass("mini-navbar");
@@ -63,17 +27,6 @@ $(document).ready(function () {
     }
     fix_height();
  
-    // Fixed Sidebar
-    // unComment this only whe you have a fixed-sidebar
-            //    $(window).bind("load", function() {
-            //        if($("body").hasClass('fixed-sidebar')) {
-            //            $('.sidebar-collapse').slimScroll({
-            //                height: '100%',
-            //                railOpacity: 0.9,
-            //            });
-            //        }
-            //    })
- 
     $(window).bind("load resize click scroll", function() {
         if(!$("body").hasClass('body-small')) {
             fix_height();
@@ -85,20 +38,6 @@ $(document).ready(function () {
 });
 
 
-// For demo purpose - animation css script
-window.animationHover = function(element, animation){
-    element = $(element);
-    element.hover(
-        function() {
-            element.addClass('animated ' + animation);
-        },
-        function(){
-            //wait for animation to finish before removing classes
-            window.setTimeout( function(){
-                element.removeClass('animated ' + animation);
-            }, 2000);
-        });
-};
 
 // Minimalize menu when screen is less than 768px
 $(function() {
@@ -131,21 +70,4 @@ window.SmoothlyMenu = function() {
         $('#side-menu').removeAttr('style');
     }
 };
-
-// Dragable panels
-window.WinMove = function() {
-    var element = "[class*=col]";
-    var handle = ".ibox-title";
-    var connect = "[class*=col]";
-    $(element).sortable(
-        {
-            handle: handle,
-            connectWith: connect,
-            tolerance: 'pointer',
-            forcePlaceholderSize: true,
-            opacity: 0.8,
-        })
-        .disableSelection();
-};
-
 
