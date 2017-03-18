@@ -16,6 +16,9 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Network\Session;
+use Cake\Utility\Security;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -27,6 +30,14 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+
+    public $json = [
+        'form' => [],
+        'data' => [],
+        'constants' => [],
+        'errors' => [],
+        'fieldsPermission' => [],
+    ];
 
     /**
      * Initialization hook method.
@@ -41,8 +52,32 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        $this->loadComponent('Cookie', [
+            'expires' => '+20 years',
+            'httpOnly' => false,
+            'key' => Security::salt()
+        ]);
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'passwordHasher' => [
+                        'className' => 'Legacy',
+                    ],
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password'
+                    ],
+                    'scope' => ['Users.state' => 1],
+                    'userModel' => 'Users',
+                ]
+            ],
+        ]);
+
+        $this->Auth->allow(['add']);
+
 
         /*
          * Enable the following components for recommended CakePHP security settings.
