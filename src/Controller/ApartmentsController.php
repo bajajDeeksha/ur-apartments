@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model\Entity\Apartment;
+use Cake\Filesystem\File;
 
 /**
  * Apartments Controller
@@ -60,7 +61,20 @@ class ApartmentsController extends AppController
         if ($this->request->is('post')) {
             $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
             $apartment->area_id = $this->Areas->find()->select('Areas.id')->where(['Areas.ward' => $apartment->selected_ward])->andWhere(['Areas.prefecture' => $apartment->selected_pref]);
+            if ($this->request->data['image1']){
+                $apartment->image1 = $this->Upload->saveImage($apartment['name'], 'image1' ,$this->request->data['image1']);
+            }
+            if ($this->request->data['image2']){
+                $apartment->image2 = $this->Upload->saveImage($apartment['name'], 'image2' ,$this->request->data['image2']);
+            }
+            if ($this->request->data['image3']){
+                $apartment->image3 = $this->Upload->saveImage($apartment['name'], 'image3' ,$this->request->data['image3']);
+            }
+            if ($this->request->data['image4']){
+                $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4' ,$this->request->data['image4']);
+            }
             if ($this->Apartments->save($apartment)) {
+
                 $this->Flash->success(__('The apartment has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -95,14 +109,22 @@ class ApartmentsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
         $apartment = $this->Apartments->get($id);
         if ($this->Apartments->delete($apartment)) {
+            $this->deleteImage('image1', $apartment['image1']);
+            $this->deleteImage('image2', $apartment['image2']);
+            $this->deleteImage('image3', $apartment['image3']);
+            $this->deleteImage('image4', $apartment['image4']);
             $this->Flash->success(__('The apartment has been deleted.'));
         } else {
             $this->Flash->error(__('The apartment could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function deleteImage($imageType, $imageName){
+        $file = new File(WWW_ROOT . 'img' . DS . 'uploads' . DS . $imageType . '/' . $imageName, false, 0777);
+        $file->delete();
     }
 }

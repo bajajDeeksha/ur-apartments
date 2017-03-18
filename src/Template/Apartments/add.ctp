@@ -9,7 +9,7 @@
                     <h5>Fill the form with Apartment Information</h5>
                 </div>
                 <div class="ibox-content">
-                        <?= $this->Form->create($apartment, ['class' => 'form-horizontal']); ?>
+                        <?= $this->Form->create($apartment, ['class' => 'form-horizontal', 'type' => 'file']); ?>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
@@ -76,6 +76,26 @@
                                 <div>
                                     <?= $this->Form->control('facilities', ['class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'placeholder' => 'Select facilities', 'label' => false]); ?>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Image 1 </label>
+                            <div class="col-sm-10">
+                                <?= $this->Form->file('image1', ['class' => 'form-control', 'label' => false]); ?>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Image 2 </label>
+                            <div class="col-sm-10">
+                                <?= $this->Form->file('image2', ['class' => 'form-control', 'label' => false]); ?>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Image 3 </label>
+                            <div class="col-sm-10">
+                                <?= $this->Form->file('image3', ['class' => 'form-control', 'label' => false]); ?>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Image 4 </label>
+                            <div class="col-sm-10">
+                                <?= $this->Form->file('image4', ['class' => 'form-control', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Remarks </label>

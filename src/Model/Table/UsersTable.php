@@ -72,10 +72,6 @@ class UsersTable extends Table
             ->integer('validity')
             ->allowEmpty('validity');
 
-        $validator
-            ->integer('state')
-            ->allowEmpty('state');
-
         return $validator;
     }
 

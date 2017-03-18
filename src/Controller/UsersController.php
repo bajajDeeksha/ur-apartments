@@ -124,12 +124,9 @@ class UsersController extends AppController
 
             $user = $this->Auth->identify();
             $this->request->session()->write('currentUser',$user);
-
-            if ($user && $user['state'] == 1) {
                 $this->Auth->setUser($user);
                 // ログイン時のリダイレクト
                 return $this->redirect($this->Auth->redirectUrl());
-            }
             //$this->Flash->error('Login Failed, Please check Username and Password');
         }
     }
@@ -142,6 +139,7 @@ class UsersController extends AppController
 
     public function dashboard()
     {
+        $this->Auth->config('authError', false);
         $title = 'Dashboard';
         $this->set(compact('title'));
     }

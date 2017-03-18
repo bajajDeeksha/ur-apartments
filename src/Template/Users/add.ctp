@@ -1,4 +1,4 @@
-<div class="row  border-bottom white-bg dashboard-header">
+<div class="row white-bg dashboard-header">
     <h2 align="center">Add User</h2>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">

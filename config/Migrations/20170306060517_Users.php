@@ -43,11 +43,6 @@ class Users extends AbstractMigration
             'limit' => 11,
             'null' => true,
         ]);
-        $table->addColumn('state', 'integer', [
-            'default' => null,
-            'limit' => 4,
-            'null' => true,
-        ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
             'null' => true,
