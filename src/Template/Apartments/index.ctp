@@ -48,6 +48,12 @@
                                             <option value="Armenia">Armenia</option>
                                         </select>
                                     </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group" style="margin-top: 20px;" align="right">
+                                            <label class="control-label"> Enable Deleting options </label>
+                                            <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isOperator', 'label' => false]); ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,49 +65,63 @@
                     </form>
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th data-breakpoints="xs sm">Prefecture</th>
-                            <th data-breakpoints="xs sm">Ward</th>
-                            <th data-breakpoints="xs sm md">Floor</th>
-                            <th data-breakpoints="xs sm md">ModalPlan</th>
-                            <th data-breakpoints="xs sm md">Size</th>
-                            <th data-breakpoints="xs sm md">Rent</th>
-                            <th></th>
-                        </tr>
+                            <tr>
+                                <th data-breakpoints="sm">ID</th>
+                                <th>Name</th>
+                                <th data-breakpoints="xs sm md">Prefecture</th>
+                                <th data-breakpoints="xs sm md">Ward</th>
+                                <th data-breakpoints="xs sm md">Floor</th>
+                                <th data-breakpoints="xs sm md">ModalPlan</th>
+                                <th data-breakpoints="xs sm md">Size</th>
+                                <th data-breakpoints="xs sm md">Rent</th>
+                                <th></th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr data-expanded="true">
-                        <?php foreach ($apartments as $apartment): ?>
-                            <td><?= h(substr($apartment->area->prefecture,0,3)).'-'.h($apartment->area_id).'-'.h($apartment->id) ?></td>
-                            <td><?= h($apartment->name) ?></td>
-                            <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
-                            <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
-                            <td><?= h($apartment->floor) ?></td>
-                            <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
-                            <td><?= h($apartment->size) ?></td>
-                            <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
-                            <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary']); ?>
-                            <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'view'],['class' => 'button btn btn-danger']); ?>  </td>
-                         
-                        </tr>
-                        <?php endforeach; ?>
+                            <tr data-expanded="true">
+                                <?php foreach ($apartments as $apartment): ?>
+                                    <td><?= h(substr($apartment->area->prefecture,0,3)).'-'.h($apartment->area_id).'-'.h($apartment->id) ?></td>
+                                    <td><?= h($apartment->name) ?></td>
+                                    <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
+                                    <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
+                                    <td><?= h($apartment->floor) ?></td>
+                                    <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
+                                    <td><?= h($apartment->size) ?></td>
+                                    <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
+                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail']); ?>
+                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
+                                <?php endforeach; ?>
+                            </tr>
                         </tbody>
                     </table>
                     <script>
-                            var config = {
-                                '.chosen-select'           : {},
-                                '.chosen-select-deselect'  : {allow_single_deselect:true},
-                                '.chosen-select-no-single' : {disable_search_threshold:10},
-                                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-                                '.chosen-select-width'     : {width:"95%"}
+                        //iphone type checkbox
+                        var elem = document.querySelector('.js-switch');
+                        var text = new Switchery(elem, {  color: '#c9302c' });
+
+                        $('#isOperator').change(function(){
+                            if($(this).is(":checked")) {
+                                console.log("say hi");
+                                $(".btn-table-detail").css('display','none');
+                                $(".btn-table-delete").css('display','block');
+                            } else {
+                                console.log("say bye");
+                                $(".btn-table-detail").css('display','block');
+                                $(".btn-table-delete").css('display','none');
                             }
-                            for (var selector in config) {
-                                $(selector).chosen(config[selector]);
-                            }
-                            //Calling foo-table 
-                            $('.table').footable();
+                        });
+                        var config = {
+                            '.chosen-select'           : {},
+                            '.chosen-select-deselect'  : {allow_single_deselect:true},
+                            '.chosen-select-no-single' : {disable_search_threshold:10},
+                            '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                            '.chosen-select-width'     : {width:"95%"}
+                        }
+                        for (var selector in config) {
+                            $(selector).chosen(config[selector]);
+                        }
+                        //Calling foo-table 
+                        $('.table').footable();
                     </script>
                 </div>
             </div>
