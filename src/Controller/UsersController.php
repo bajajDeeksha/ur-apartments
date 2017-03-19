@@ -89,17 +89,21 @@ class UsersController extends AppController
             $user->password = md5($mailPassword);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                $email = new Email();
-                $email
-                    ->setTemplate('notification')
-                    ->setViewVars(['name' => $user->name, 'validity' => $user->validity, 'username' => $user->username, 'password' => $mailPassword])
-                    ->setLayout('notification')
-                    ->setEmailFormat('html')
-                    ->setSubject('Welcome to Asahi Service Company!')
-                    ->setTo($user->email)
-                    ->setFrom(['admin@asahiservices.com' => 'Asahi Service Company'])
-                    ->send();
-                return $this->redirect(['action' => 'index']);
+                if ($user->auth == 0){
+                    $email = new Email();
+                    $email
+                        ->setTemplate('notification')
+                        ->setViewVars(['name' => $user->name, 'validity' => $user->validity, 'username' => $user->username, 'password' => $mailPassword])
+                        ->setLayout('notification')
+                        ->setEmailFormat('html')
+                        ->setSubject('Welcome to Asahi Service Company!')
+                        ->setTo($user->email)
+                        ->setFrom(['admin@asahiservices.com' => 'Asahi Service Company'])
+                        ->send();
+                    return $this->redirect(['action' => 'index']);
+                } else {
+                    return $this->redirect(['action' => 'opindex']);
+                }
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }

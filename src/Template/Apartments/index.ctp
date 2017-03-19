@@ -66,10 +66,10 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th data-breakpoints="sm">ID</th>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th data-breakpoints="xs sm md">Prefecture</th>
-                                <th data-breakpoints="xs sm md">Ward</th>
+                                <th data-breakpoints="xs sm">Ward</th>
                                 <th data-breakpoints="xs sm md">Floor</th>
                                 <th data-breakpoints="xs sm md">ModalPlan</th>
                                 <th data-breakpoints="xs sm md">Size</th>
@@ -78,19 +78,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr data-expanded="true">
-                        <?php foreach ($apartments as $apartment): ?>
-                            <td><?= h(substr($apartment->area->prefecture,0,3)).'-'.h($apartment->area_id).'-'.h($apartment->id) ?></td>
-                            <td><?= h($apartment->name) ?></td>
-                            <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
-                            <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
-                            <td><?= h($apartment->floor) ?></td>
-                            <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
-                            <td><?= h($apartment->size) ?></td>
-                            <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')'.' yen' ?></td>
-                            <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view', $apartment->id]) ?></td>
-                        </tr>
-                        <?php endforeach; ?>
                             <tr data-expanded="true">
                                 <?php foreach ($apartments as $apartment): ?>
                                     <td><?= h(substr($apartment->area->prefecture,0,3)).'-'.h($apartment->area_id).'-'.h($apartment->id) ?></td>
@@ -98,7 +85,11 @@
                                     <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
                                     <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
                                     <td><?= h($apartment->floor) ?></td>
+                                    <?php if($apartment->model_plan): ?>
                                     <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
+                                    <?php else: ?>
+                                    <td></td>
+                                    <?php endif; ?>
                                     <td><?= h($apartment->size) ?></td>
                                     <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
                                     <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail']); ?>
