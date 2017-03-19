@@ -1,9 +1,13 @@
 <?php
 namespace App\Controller;
+//namespace App\Mailer;
+
 
 use App\Controller\AppController;
 use App\Model\Entity\User;
 use Cake\Core\Configure;
+use Cake\Core\App;
+use Cake\Mailer\Email;
 use Cake\Utility\Security;
 
 /**
@@ -81,10 +85,20 @@ class UsersController extends AppController
         $title = 'User|Add';
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            $user->password = md5($this->request->data['password']);
+            $mailPassword = $this->request->data('password');
+            $user->password = md5($mailPassword);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-
+                $email = new Email();
+                $email
+                    ->setTemplate('notification')
+                    ->setViewVars(['name' => $user->name, 'validity' => $user->validity, 'username' => $user->username, 'password' => $mailPassword])
+                    ->setLayout('notification')
+                    ->setEmailFormat('html')
+                    ->setSubject('Welcome to Asahi Service Company!')
+                    ->setTo($user->email)
+                    ->setFrom(['admin@asahiservices.com' => 'Asahi Service Company'])
+                    ->send();
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -92,6 +106,14 @@ class UsersController extends AppController
         $this->set(compact('user', 'auth', 'title'));
         $this->set('_serialize', ['user']);
     }
+
+//    public function notification(){
+//        $name = 'name';
+//        $validity = '123';
+//        $username = 'username';
+//        $password = 'password';
+//        $this->set(compact('name', 'validity', 'username', 'password'));
+//    }
 
     /**
      * Delete method
@@ -102,7 +124,6 @@ class UsersController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The user has been deleted.'));

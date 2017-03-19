@@ -113,9 +113,9 @@
         if($.inArray('0-9', dataSet) >= 0){
             possible += '0123456789';
         }
-        if($.inArray('#', dataSet) >= 0){
-            possible += '![]{}()%&*$#^<>~@|';
-        }
+//        if($.inArray('#', dataSet) >= 0){
+//            possible += '![]{}()%&*$#^<>~@|';
+//        }
         var text = '';
         for(var i=0; i < $(id).attr('data-size'); i++) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
