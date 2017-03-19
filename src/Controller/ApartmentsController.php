@@ -20,12 +20,13 @@ class ApartmentsController extends AppController
      */
     public function index()
     {
+        $title = 'Apartment|List';
         $this->paginate = [
             'contain' => ['Areas']
         ];
         $apartments = $this->paginate($this->Apartments);
 
-        $this->set(compact('apartments'));
+        $this->set(compact('apartments', 'title'));
         $this->set('_serialize', ['apartments']);
     }
 
@@ -41,8 +42,11 @@ class ApartmentsController extends AppController
         $apartment = $this->Apartments->get($id, [
             'contain' => ['Areas']
         ]);
-
-        $this->set('apartment', $apartment);
+        $title = 'Apartment|View';
+        $model = Apartment::MODEL;
+        $facilities = explode(',', $apartment->facilities);
+        $facility = Apartment::FACILITIES;
+        $this->set(compact('apartment', 'model', 'facilities', 'facility', 'title'));
         $this->set('_serialize', ['apartment']);
     }
 
@@ -73,6 +77,7 @@ class ApartmentsController extends AppController
             if ($this->request->data['image4']){
                 $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4' ,$this->request->data['image4']);
             }
+            $apartment->facilities = implode(',', $this->request->data['facilities']);
             if ($this->Apartments->save($apartment)) {
 
                 $this->Flash->success(__('The apartment has been saved.'));
