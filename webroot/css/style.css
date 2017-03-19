@@ -2432,3 +2432,15 @@ ul.clear-list:first-child {
       text-align: center;
     }
 }
+
+.btn-table-detail {
+  display: block;
+  padding: 1px 5px !important;
+  text-align: -webkit-center !important;
+}
+
+.btn-table-delete {
+  display: none;
+  padding: 1px 5px !important;
+  text-align: -webkit-center !important;
+}

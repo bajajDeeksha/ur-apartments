@@ -19,6 +19,7 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Address</label>
                             <div class="col-sm-10">
                                 <?= $this->Form->control('address', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Enter the address', 'label' => false]); ?>
+                                <small style="color: #cc0000"><b>PLEASE TYPE IN FOLLOWING FORMAT - AREA NAME , 1-5-10 </b></small> 
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Prefecture / Ward </label>
@@ -106,7 +107,7 @@
                         <div class="form-group" align="center">
                             <div class="col-sm-12">
                                 <?= $this->Html->link('Cancel', ['controller' => 'Users', 'action' => 'dashboard']) ?>
-                                <?= $this->Form->button('Save changes', ['class' => 'btn btn-primary', 'name' => 'save']); ?>
+                                <?= $this->Form->button('Add Apartment', ['class' => 'btn btn-primary', 'name' => 'save']); ?>
                             </div>
                         </div>
                     <?= $this->Form->end() ?>
