@@ -24,9 +24,10 @@ class ApartmentsController extends AppController
         $this->paginate = [
             'contain' => ['Areas']
         ];
+        $modelPlan = Apartment::MODEL;
         $apartments = $this->paginate($this->Apartments);
 
-        $this->set(compact('apartments', 'title'));
+        $this->set(compact('apartments', 'title', 'modelPlan'));
         $this->set('_serialize', ['apartments']);
     }
 
