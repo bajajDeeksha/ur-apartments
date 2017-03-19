@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <?= $this->Html->css('bootstrap.min.css') ?>
+    <title>Asashi Service Company</title>
+    <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('../font-awesome/css/font-awesome.css') ?>
     <?= $this->Html->css('animate.css') ?>
     <?= $this->Html->css('style.css') ?>
-    <?= $this->Html->css('customize.css') ?>
 
 </head>
 <body id="loginscreen" class="gray-bg">
 <div class="middle-box text-center loginscreen animated fadeInDown">
     <div>
-        <p class="logo-name">IN+</p>
+        <?= $this->Html->image('/images/logo-gray-transparent.png'); ?>
     </div>
-    <?= $this->Form->create(); ?>
+    <?= $this->Form->create(null, ['class' => 'login-box']); ?>
         <div class="form-group">
             <?= $this->Form->input('username',['placeholder' => 'Username', 'class'=> 'form-control', 'label' => false]); ?>
         </div>

@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title><?= $title ?></title>
 
     <?= $this->Html->css('plugins/chosen/chosen.css') ?>
-    <?= $this->Html->css('bootstrap.min.css') ?>
+    <?= $this->Html->css('plugins/footable/footable.css') ?>
+    <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('../font-awesome/css/font-awesome.css') ?>
     <?= $this->Html->css('animate.css') ?>
     <?= $this->Html->css('style.css') ?>
@@ -27,9 +28,9 @@
                     <div class="dropdown profile-element"> <span>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span style="text-align: center;" class="block m-t-xs"> <strong class="font-bold">Kamal Ishikawa</strong>
+                            <span class="clear"> <span style="text-align: center;" class="block m-t-xs"> <strong class="font-bold"><?= $this->request->session()->read('currentUser')['name']; ?></strong>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="login.html">Logout</a></li>
+                                <li><?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?></li>
                             </ul>
                                 </span>
                                 </span>
@@ -40,24 +41,22 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+                    <!--<a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>-->
+                    <?= $this->Html->link('<i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span>', ['controller' => 'Users', 'action' => 'dashboard'], ['escape' => false]); ?>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-home"></i> <span class="nav-label"> Apartments </span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="add_apartment.html">Add Apartments</a></li>
-                        <li><a href="">Delete Apartments</a></li>
+                        <li><?= $this->Html->link('Add apartments', ['controller' => 'Apartments', 'action' => 'add']) ?></li>
+                        <li><?= $this->Html->link('View apartments', ['controller' => 'Apartments', 'action' => 'index']) ?></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="add_user.html">Add Users</a></li>
-                        <li><a href="">Manage Users</a></li>
+                        <li><?= $this->Html->link('Add Users', ['controller' => 'Users', 'action' => 'add']) ?></li>
+                        <li><?= $this->Html->link('View User', ['controller' => 'Users', 'action' => 'index']) ?></li>
                     </ul>
-                </li>
-                <li class="special_link">
-                    <a href="test.html"><i class="fa fa-database"></i> <span class="nav-label">View The Website!</span></a>
                 </li>
             </ul>
         </div>
@@ -71,11 +70,10 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
+                        <span class="m-r-sm text-muted welcome-message">Welcome to ASAHI Service Company</span>
                     </li>
                     <li>
-                        <a href="login.html">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
+                        <?= $this->Html->link('<i class="fa fa-sign-out"></i> Log out', ['controller' => 'Users', 'action' => 'logout'], ['escape' => false]) ?>
                     </li>
                 </ul>
             </nav>
@@ -83,6 +81,7 @@
 
     <!-- Mainly scripts -->
     <?= $this->Html->script('jquery-2.1.1.js') ?>
+    <?= $this->Html->script('lightbox.js') ?>
     <?= $this->Html->script('bootstrap.min.js') ?>
     <?= $this->Html->script('inspinia.js') ?>
     <?= $this->Html->script('plugins/chosen/chosen.jquery.js') ?>
@@ -93,8 +92,10 @@
     <?= $this->Html->script('plugins/switchery/switchery.js') ?>
     <!-- iCheck -->
     <?= $this->Html->script('plugins/iCheck/icheck.min.js') ?>
+    <!-- footable -->
+    <?= $this->Html->script('plugins/footable/footable.js') ?>
 
-    <!--<?= $this->Flash->render() ?>-->
+        <!--<?= $this->Flash->render() ?>-->
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>

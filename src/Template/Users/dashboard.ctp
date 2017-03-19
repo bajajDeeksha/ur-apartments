@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div class="row  border-bottom white-bg dashboard-header">
-        <h2 align="center">Welcome To Asahi Service Company</h2>
+    <div class="row  border-bottom white-bg dashboard-header text-center">
+        <?= $this->Html->image('/images/logo-transparent.png'); ?>
     </div>
         <div class="wrapper wrapper-content">
             <div class="row">
@@ -19,7 +19,7 @@
                             </div>
                         </div>
                             <?=
-                                $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Apartments', 'action' => 'index', '_full'=> true], ['target' => '_blank', 'escape' => false]);
+                                $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Apartments', 'action' => 'index', '_full'=> true], ['escape' => false]);
                             ?>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <?=
-                            $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Users', 'action' => 'index', '_full'=> true], ['target' => '_blank', 'escape' => false]);
+                            $this->Html->link('<div class="panel-footer"><span class="pull-left">View Details</span><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span><div class="clearfix"></div></div>', ['controller' => 'Users', 'action' => 'index', '_full'=> true], ['escape' => false]);
                         ?>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             </div>
             <div class="row big-buttons">
                 <div class="col-sm-6 big-right">
-                        <?= $this->Html->link('Add Apartment', ['controller' => 'Apartments', 'action' => 'add'],['class' => 'button btn btn-primary', 'target' => '_blank']); ?>
+                        <?= $this->Html->link('Add Apartment', ['controller' => 'Apartments', 'action' => 'add'],['class' => 'button btn btn-primary']); ?>
                 </div>
                 <div class="col-sm-6 big-left">
                     <?= $this->Html->link('Add User', ['controller' => 'Users', 'action' => 'add'],['class' => 'button btn btn-primary', 'target' => '_blank']); ?>

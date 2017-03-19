@@ -39,6 +39,7 @@
                     <table class="table">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th data-breakpoints="xs sm">Prefecture</th>
                             <th data-breakpoints="xs sm">Ward</th>
@@ -50,8 +51,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($apartments as $apartment): ?>
                         <tr data-expanded="true">
+                        <?php foreach ($apartments as $apartment): ?>
+                            <td><?= h(substr($apartment->area->prefecture,0,3)).'-'.h($apartment->area_id).'-'.h($apartment->id) ?></td>
                             <td><?= h($apartment->name) ?></td>
                             <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
                             <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
@@ -64,7 +66,11 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <script>
+                            $('.table').footable();
+                    </script>
                 </div>
             </div>
         </div>
     </div>
+</div>

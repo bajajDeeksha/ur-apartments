@@ -74,7 +74,7 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Facilities</label>
                             <div class="col-sm-10">
                                 <div>
-                                    <?= $this->Form->control('facilities', ['class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'placeholder' => 'Select facilities', 'label' => false]); ?>
+                                    <?= $this->Form->control('facilities', ['class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple' => true, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'placeholder' => 'Select facilities', 'label' => false]); ?>
                                 </div>
                             </div>
                         </div>
