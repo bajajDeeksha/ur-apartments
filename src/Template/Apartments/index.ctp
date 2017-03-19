@@ -58,7 +58,7 @@
                             <td><?= $apartment->has('area') ? h($apartment->area->prefecture) : '' ?></td>
                             <td><?= $apartment->has('area') ? h($apartment->area->ward) : '' ?></td>
                             <td><?= h($apartment->floor) ?></td>
-                            <td><?= h($apartment->model_plan) ?></td>
+                            <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
                             <td><?= h($apartment->size) ?></td>
                             <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
                             <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view', $apartment->id]) ?></td>
