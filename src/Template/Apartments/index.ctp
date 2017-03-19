@@ -60,7 +60,7 @@
                             <td><?= h($apartment->floor) ?></td>
                             <td><?= h($modelPlan[$apartment->model_plan]) ?></td>
                             <td><?= h($apartment->size) ?></td>
-                            <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
+                            <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')'.' yen' ?></td>
                             <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view', $apartment->id]) ?></td>
                         </tr>
                         <?php endforeach; ?>
