@@ -77,7 +77,9 @@ class ApartmentsController extends AppController
             if ($this->request->data['image4']){
                 $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4' ,$this->request->data['image4']);
             }
-            $apartment->facilities = implode(',', $this->request->data['facilities']);
+            if ($apartment->facilities){
+                $apartment->facilities = implode(',', $this->request->data['facilities']);
+            }
             if ($this->Apartments->save($apartment)) {
 
                 $this->Flash->success(__('The apartment has been saved.'));
