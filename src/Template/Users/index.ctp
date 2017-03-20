@@ -38,6 +38,28 @@
                                 </tbody>
                             </table>
                             <script>
+                                    $(document).ready(function() {
+                                       setTimeout(function() {
+                                        toastr.options = {
+                                            closeButton: true,
+                                            progressBar: true,
+                                            showMethod: 'slideDown',
+                                            timeOut: 6000
+                                        };
+                                        toastr.error('User Has Been Deleted');
+                                    }, 1300);
+                                   });
+                                   $(document).ready(function() {
+                                       setTimeout(function() {
+                                        toastr.options = {
+                                            closeButton: true,
+                                            progressBar: true,
+                                            showMethod: 'slideDown',
+                                            timeOut: 6000
+                                        };
+                                        toastr.success('User Has Been Added');
+                                    }, 1300);
+                                   });
                                 //Calling foo-table 
                                 $('.table').footable();
                             </script>

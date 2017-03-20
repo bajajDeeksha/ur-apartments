@@ -102,12 +102,34 @@
                                     <td><?= h($apartment->size) ?></td>
                                     <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
                                     <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail']); ?>
-                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
+                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                     <script>
+                    $(document).ready(function() {
+                            setTimeout(function() {
+                            toastr.options = {
+                                closeButton: true,
+                                progressBar: true,
+                                showMethod: 'slideDown',
+                                timeOut: 6000
+                            };
+                            toastr.error('Apartment Has Been Deleted');
+                        }, 1300);
+                        });
+                        $(document).ready(function() {
+                            setTimeout(function() {
+                            toastr.options = {
+                                closeButton: true,
+                                progressBar: true,
+                                showMethod: 'slideDown',
+                                timeOut: 6000
+                            };
+                            toastr.success('Apartment Has Been Added');
+                        }, 1300);
+                        });
                         $(window).bind("load", function() {
                             console.log("say Hi");
                             $('#isDelete').attr('checked',false);

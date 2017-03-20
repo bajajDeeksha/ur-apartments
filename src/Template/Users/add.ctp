@@ -10,10 +10,12 @@
                 </div>
                 <div class="ibox-content">
                     <?= $this->Form->create($user, ['id' => 'form' , 'class' => 'form-horizontal']); ?>
+                        <?php if($this->request->session()->read('currentUser')['auth'] > 1): ?>
                         <div class="form-group" align="right">
                             <label class="control-label"> Is The User an Operator </label>
                             <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isOperator', 'label' => false]); ?>
                         </div>
+                        <?php endif; ?>
                         <div class="form-group"><label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
                                 <?= $this->Form->control('name', ['class' => 'form-control', 'required'=> 'true', 'type' => 'text', 'placeholder' => 'Enter the name', 'label' => false]); ?>
