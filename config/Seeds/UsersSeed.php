@@ -21,29 +21,20 @@ class UsersSeed extends AbstractSeed
         $data = [
             [
                 'id' => 1,
-                'name' => 'sam',
-                'username' => 'sam',
+                'name' => 'super_user',
+                'username' => 'super',
                 'password' => md5('test'),
-                'email' => 'sam@sam.com',
+                'email' => 'dishab16@gmail.com',
                 'auth' => 9,
                 'validity' => 0,
             ],
             [
                 'id' => 2,
-                'name' => 'sam2',
-                'username' => 'sam2',
-                'password' => md5('test'),
-                'email' => 'sam2@sam2.com',
-                'auth' => 1,
-                'validity' => 0,
-            ],
-            [
-                'id' => 3,
-                'name' => 'sam3',
-                'username' => 'sam3',
-                'password' => md5('test'),
-                'email' => 'sam3@sam3.com',
-                'auth' => 1,
+                'name' => 'Kamal Ishikawa',
+                'username' => 'kamal',
+                'password' => md5('kamal'),
+                'email' => 'asahiservices2017@gmail.com',
+                'auth' => 9,
                 'validity' => 0,
             ]
         ];

@@ -21,14 +21,15 @@ class ApartmentsController extends AppController
     public function index()
     {
         $flag = $this->request->session()->read('flagApt');
+        $search = 0;
         $title = 'Apartment|List';
         $this->paginate = [
-            'contain' => ['Areas']
+            'contain' => ['Areas'],
+            'order' => ['id'=>'DESC']
         ];
         $apartments = $this->paginate($this->Apartments);
 
         if ($this->request->is('post')){
-            $this->request->session()->delete('flagApt');
             $this->loadModel('Areas');
             $data = $this->request->data;
             if ($data['selected_pref'] && empty($data['ward'])){
@@ -46,7 +47,7 @@ class ApartmentsController extends AppController
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
             $apartments = $this->paginate($apartments);
-
+            $search = 1;
             
 //            if (empty($data['selected_pref'])){
 //                $data['selected_pref'] = '';
@@ -76,7 +77,7 @@ class ApartmentsController extends AppController
 
         $modelPlan = Apartment::MODEL;
         $areas = $this->Apartments->Areas->find('all')->toArray();
-        $this->set(compact('apartments', 'title', 'modelPlan', 'areas', 'flag'));
+        $this->set(compact('apartments', 'title', 'modelPlan', 'areas', 'flag', 'search'));
         $this->set('_serialize', ['apartments']);
     }
 
