@@ -102,7 +102,7 @@
                                     <td><?= h($apartment->size) ?></td>
                                     <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
                                     <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail']); ?>
-                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
+                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
