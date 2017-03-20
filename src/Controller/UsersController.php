@@ -79,7 +79,7 @@ class UsersController extends AppController
                 $user = $this->Users->patchEntity($user, $this->request->getData());
                 $mailPassword = $this->request->data('password');
                 $user->password = md5($mailPassword);
-                if ($this->request->data['auth'] == 0){
+                if ($this->request->data('auth') == 0){
                     if ($this->request->data['validity'] == 0){
                         $user->validity = 7;
                     }
