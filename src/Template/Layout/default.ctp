@@ -96,7 +96,7 @@
     <?= $this->Html->script('plugins/footable/footable.js') ?>
 
         <!--<?= $this->Flash->render() ?>-->
-    <div class="container clearfix">
+    <div class="clearfix">
         <?= $this->fetch('content') ?>
     </div>
     <footer>

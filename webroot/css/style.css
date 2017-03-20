@@ -1605,7 +1605,6 @@ code {
   color: inherit;
   margin-bottom: 0;
   padding: 14px 15px 7px;
-  height: 48px;
 }
 .ibox-content {
   background-color: #ffffff;
@@ -2337,7 +2336,7 @@ ul.clear-list:first-child {
     margin-bottom: 10px;
     border-bottom: 1px solid #f2f2f2;
     color: #18a689;
-    font-size: 20px !important;
+    font-size: 19px !important;
     font-weight: 400 !important;
     letter-spacing: 2px;
 }
@@ -2443,4 +2442,17 @@ ul.clear-list:first-child {
   display: none;
   padding: 1px 5px !important;
   text-align: -webkit-center !important;
+}
+
+.error-message {
+  color: #cc0000;
+  font-weight: 600;
+}
+
+.fa-trash {
+  color: #d43f3a;
+}
+
+.fa-trash:hover {
+   color : #d9534f;
 }
