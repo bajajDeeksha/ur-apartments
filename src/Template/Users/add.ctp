@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Fill the form with Users' Information</h5>
+                    <h5>Fill the form with User's Information</h5>
                 </div>
                 <div class="ibox-content">
                     <?= $this->Form->create($user, ['id' => 'form' , 'class' => 'form-horizontal']); ?>

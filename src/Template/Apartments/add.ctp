@@ -9,7 +9,45 @@
                     <h5>Fill the form with Apartment Information</h5>
                 </div>
                 <div class="ibox-content">
-                        <?= $this->Form->create($apartment, ['id' => 'form' , 'class' => 'form-horizontal', 'type' => 'file']); ?>
+                        <?= $this->Form->create($apartment, ['class' => 'form-horizontal', 'type' => 'file']); ?>
+                        <!--<?= $this->Form->create($apartment, ['class' => 'form-horizontal', 'type' => 'file']); ?>-->
+                        <script type="text/javascript" >
+                            $(document).ready(function () {
+                                $(".ward").chosen({
+                                    search_contains: true
+                                });
+                            })
+                        </script>
+                        <script type="text/javascript" >
+                            $(document).ready(function () {
+                                $(".prefecture").chosen({
+                                    search_contains: true
+                                });
+
+                                $(".prefecture").change(function()
+                                {
+                                    var prefecture=$(this).find(":selected").text();
+
+                                    $.ajax
+                                    ({
+                                        type: "POST",
+                                        url: "getWards",
+                                        data: prefecture,
+                                        cache: false,
+                                        success: function(html)
+                                        {
+                                            $(".ward").html(html);
+                                            $(".ward").trigger('chosen:updated');
+                                            $(".ward").chosen({
+                                                width: "100%",
+                                                search_contains: true
+                                            });
+                                        }
+                                    });
+
+                                });
+                            })
+                        </script>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">

@@ -24,11 +24,80 @@ class ApartmentsController extends AppController
         $this->paginate = [
             'contain' => ['Areas']
         ];
-        $modelPlan = Apartment::MODEL;
         $apartments = $this->paginate($this->Apartments);
 
-        $this->set(compact('apartments', 'title', 'modelPlan'));
+        if ($this->request->is('post')){
+            $this->loadModel('Areas');
+            $data = $this->request->data;
+            if ($data['selected_pref'] && empty($data['ward'])){
+                $area_id = $this->getAreaID('', $data['selected_pref']);
+                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            }
+
+            if ($data['selected_pref'] && is_array($data['ward'])){
+                $area_id = $this->getAreaID($data['ward'], $data['selected_pref']);
+                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            }
+            
+            if (!$data['selected_pref'] && is_array($data['ward'])){
+                $area_id = $this->getAreaID($data['ward'], null);
+                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            }
+            $apartments = $this->paginate($apartments);
+
+            
+//            if (empty($data['selected_pref'])){
+//                $data['selected_pref'] = '';
+//            } else {
+//                $prefecture = $data['selected_pref'];
+//            }
+//            if (empty($data['ward'])){
+//                $this->paginate = [
+//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
+//                    'order' => ['Contracts.id' => 'DESC'],
+//                ];
+//                $data['ward'] = '';
+//            } else {
+//                $this->paginate = [
+//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
+//                    'order' => ['Contracts.id' => 'DESC'],
+//                ];
+//                $ward = $data['ward'];
+//            }
+//
+//            $apartments = $this->paginate($this->Apartments->getSearch($data));
+            
+            
+            
+            
+        }
+
+        $modelPlan = Apartment::MODEL;
+        $areas = $this->Apartments->Areas->find('all')->toArray();
+        $this->set(compact('apartments', 'title', 'modelPlan', 'areas'));
         $this->set('_serialize', ['apartments']);
+    }
+
+    private function getAreaID($ward, $prefecture)
+    {
+        if ($prefecture && empty($ward)){
+            return $this->Areas->find()
+                ->select('Areas.id')
+                ->where(['Areas.prefecture' => $prefecture]);
+        }
+
+        if ($prefecture && is_array($ward)){
+            return $this->Areas->find()
+                ->select('Areas.id')
+                ->where(['Areas.ward IN' => $ward])
+                ->andWhere(['Areas.prefecture' => $prefecture]);
+        }
+
+        if (!$prefecture && is_array($ward)){
+            return $this->Areas->find()
+                ->select('Areas.id')
+                ->where(['Areas.ward IN' => $ward]);
+        }
     }
 
     /**
@@ -98,7 +167,7 @@ class ApartmentsController extends AppController
         $this->autoRender=false;
         $data = [];
         $this->loadModel('Areas');
-        $areas = $this->Areas->find('all',['conditions' => ['prefecture LIKE'=>key($this->request->data)]]);
+        $areas = $this->Areas->find('all',['conditions' => ['Areas.prefecture LIKE'=>key($this->request->data)]]);
         $data[0]="<option value=''>".'---'."</option>";
         foreach($areas as $area)
         {

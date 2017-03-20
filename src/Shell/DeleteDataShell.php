@@ -19,7 +19,7 @@ use Cake\Console\Shell;
 /**
  * Simple console wrapper around Psy\Shell.
  */
-class DeleteApartmentShell extends Shell
+class DeleteDataShell extends Shell
 {
 
     /**
@@ -31,17 +31,12 @@ class DeleteApartmentShell extends Shell
     {
         $this->loadModel('Apartments');
         $this->loadModel('Users');
-        //$this->Apartments->deleteAll(['Apartments.created <' => date('Y-m-d', strtotime('-13 days'))]);
-        $this->Users->deleteAll([date('Y-m-d', strtotime('Users.created')).'<' => date('Y-m-d', strtotime('-'. 'Users.validity' . ' days')), 'Users.auth' => 0]);
-
-//        $users = $this->Users->find()->where(['Users.auth' => 0]);
-//        foreach ($users as $user){
-//            var_dump($user->created); //var_dump($user->validity);
-//            if ($user->created < date('Y-m-d', strtotime('-'. (int)$user->validity . ' days'))){
-//                $this->Users->delete($user);
-//            }
-//        }
-        //$users = $this->Users->find()->where(['Users.created <' => date('Y-m-d', strtotime('-'. 'Users.validity' . ' days'))])->toArray();
-
+        $this->Apartments->deleteAll(['Apartments.created <' => date('Y-m-d', strtotime('-13 days'))]);
+        $users = $this->Users->find()->where(['Users.auth' => 0]);
+        foreach ($users as $user){
+            if (strtotime($user->created) < strtotime(date('Y-m-d', strtotime('-'. (int)$user->validity . ' days')))){
+                $this->Users->delete($user);
+            }
+        }
     }
 }
