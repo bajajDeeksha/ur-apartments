@@ -18,8 +18,6 @@
 
 </head>
 <body>
-
-
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -40,8 +38,8 @@
                         ASC
                     </div>
                 </li>
+                <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                 <li class="active">
-                    <!--<a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>-->
                     <?= $this->Html->link('<i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span>', ['controller' => 'Users', 'action' => 'dashboard'], ['escape' => false]); ?>
                 </li>
                 <li>
@@ -58,10 +56,17 @@
                         <li><?= $this->Html->link('View User', ['controller' => 'Users', 'action' => 'index']) ?></li>
                     </ul>
                 </li>
+                <?php else: ?>
+                <li>
+                    <a href="#"><i class="fa fa-home"></i> <span class="nav-label"> Apartments </span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><?= $this->Html->link('View apartments', ['controller' => 'Apartments', 'action' => 'index']) ?></li>
+                    </ul>
+                </li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
-
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">

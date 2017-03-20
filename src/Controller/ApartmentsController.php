@@ -127,40 +127,44 @@ class ApartmentsController extends AppController
      */
     public function add()
     {
-        $this->loadModel('Areas');
-        $apartment = $this->Apartments->newEntity();
-        $model = Apartment::MODEL;
-        $facilities = Apartment::FACILITIES;
-        $title = 'Apartment|Add';
-        if ($this->request->is('post')) {
-            $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
-            $apartment->area_id = $this->Areas->find()->select('Areas.id')->where(['Areas.ward' => $apartment->selected_ward])->andWhere(['Areas.prefecture' => $apartment->selected_pref]);
-            if ($this->request->data['image1']){
-                $apartment->image1 = $this->Upload->saveImage($apartment['name'], 'image1' ,$this->request->data['image1']);
-            }
-            if ($this->request->data['image2']){
-                $apartment->image2 = $this->Upload->saveImage($apartment['name'], 'image2' ,$this->request->data['image2']);
-            }
-            if ($this->request->data['image3']){
-                $apartment->image3 = $this->Upload->saveImage($apartment['name'], 'image3' ,$this->request->data['image3']);
-            }
-            if ($this->request->data['image4']){
-                $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4' ,$this->request->data['image4']);
-            }
-            if ($apartment->facilities){
-                $apartment->facilities = implode(',', $this->request->data['facilities']);
-            }
-            if ($this->Apartments->save($apartment)) {
+        if($this->request->session()->read('currentUser')['auth'] > 0) {
+            $this->loadModel('Areas');
+            $apartment = $this->Apartments->newEntity();
+            $model = Apartment::MODEL;
+            $facilities = Apartment::FACILITIES;
+            $title = 'Apartment|Add';
+            if ($this->request->is('post')) {
+                $apartment = $this->Apartments->patchEntity($apartment, $this->request->getData());
+                $apartment->area_id = $this->Areas->find()->select('Areas.id')->where(['Areas.ward' => $apartment->selected_ward])->andWhere(['Areas.prefecture' => $apartment->selected_pref]);
+                if ($this->request->data['image1']) {
+                    $apartment->image1 = $this->Upload->saveImage($apartment['name'], 'image1', $this->request->data['image1']);
+                }
+                if ($this->request->data['image2']) {
+                    $apartment->image2 = $this->Upload->saveImage($apartment['name'], 'image2', $this->request->data['image2']);
+                }
+                if ($this->request->data['image3']) {
+                    $apartment->image3 = $this->Upload->saveImage($apartment['name'], 'image3', $this->request->data['image3']);
+                }
+                if ($this->request->data['image4']) {
+                    $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4', $this->request->data['image4']);
+                }
+                if ($apartment->facilities) {
+                    $apartment->facilities = implode(',', $this->request->data['facilities']);
+                }
+                if ($this->Apartments->save($apartment)) {
 
-                $this->Flash->success(__('The apartment has been saved.'));
+                    $this->Flash->success(__('The apartment has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                    return $this->redirect(['action' => 'index']);
+                }
+                $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
             }
-            $this->Flash->error(__('The apartment could not be saved. Please, try again.'));
+            $areas = $this->Apartments->Areas->find('all')->toArray();
+            $this->set(compact('apartment', 'areas', 'model', 'facilities', 'title'));
+            $this->set('_serialize', ['apartment']);
+        } else {
+            return $this->redirect(['action' => 'index']);
         }
-        $areas = $this->Apartments->Areas->find('all')->toArray();
-        $this->set(compact('apartment', 'areas', 'model', 'facilities', 'title'));
-        $this->set('_serialize', ['apartment']);
     }
 
     public function getWards(){
@@ -186,17 +190,18 @@ class ApartmentsController extends AppController
      */
     public function delete($id = null)
     {
-        $apartment = $this->Apartments->get($id);
-        if ($this->Apartments->delete($apartment)) {
-            $this->deleteImage('image1', $apartment['image1']);
-            $this->deleteImage('image2', $apartment['image2']);
-            $this->deleteImage('image3', $apartment['image3']);
-            $this->deleteImage('image4', $apartment['image4']);
-            $this->Flash->success(__('The apartment has been deleted.'));
-        } else {
-            $this->Flash->error(__('The apartment could not be deleted. Please, try again.'));
+        if($this->request->session()->read('currentUser')['auth'] > 0) {
+            $apartment = $this->Apartments->get($id);
+            if ($this->Apartments->delete($apartment)) {
+                $this->deleteImage('image1', $apartment['image1']);
+                $this->deleteImage('image2', $apartment['image2']);
+                $this->deleteImage('image3', $apartment['image3']);
+                $this->deleteImage('image4', $apartment['image4']);
+                $this->Flash->success(__('The apartment has been deleted.'));
+            } else {
+                $this->Flash->error(__('The apartment could not be deleted. Please, try again.'));
+            }
         }
-
         return $this->redirect(['action' => 'index']);
     }
 

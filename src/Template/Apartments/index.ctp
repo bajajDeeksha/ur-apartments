@@ -55,18 +55,20 @@
                                         <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
                                         <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content']); ?>
                                     </div>
+                                    <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                                     <div class="col-xs-12">
                                         <div class="form-group" style="margin-top: 20px;" align="right">
                                             <label class="control-label"> Enable Deleting options </label>
                                             <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isDelete', 'label' => false]); ?>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group" align="center">
                             <div class="col-sm-12">
-                                <button id="show" class="btn btn-primary" type="submit">Search</button>
+                                <button id="show" class="btn m-t-md m-b-md btn-primary" type="submit">Search</button>
                             </div>
                         </div>
                     <?php $this->Form->end(); ?>
