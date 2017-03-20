@@ -10,7 +10,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-home fa-5x"></i>
+                                    <i class="fa fa-home fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
@@ -28,7 +28,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-users fa-5x"></i>
+                                    <i class="fa fa-users fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">12</div>
@@ -46,7 +46,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-handshake-o fa-5x"></i>
+                                    <i class="fa fa-handshake-o fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">4</div>

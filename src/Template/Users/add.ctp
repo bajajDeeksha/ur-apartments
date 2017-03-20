@@ -55,7 +55,7 @@
                             <div class="col-sm-12">
                                 <? $this->Form->control('state', ['type' => 'hidden', 'default' => 1, 'value' => 1]); ?>
                                 <?= $this->Html->link('Cancel', ['controller' => 'Users', 'action' => 'dashboard']) ?>
-                                <?= $this->Form->button('Save changes', ['class' => 'btn btn-primary']); ?>
+                                <?= $this->Form->button('Add User', ['class' => 'btn btn-primary']); ?>
                             </div>
                         </div>
                         <?= $this->Form->end() ?>
@@ -65,7 +65,11 @@
     </div>
 </div>
 <script>
-
+    $(window).bind("load", function() {
+        $('#isOperator').attr('checked',false);
+        var elem = document.querySelector('.js-switch');
+        var text = new Switchery(elem, {  color: '#1AB394' });
+    });
     // chosen-select jQuery
     var config = {
         '.chosen-select'           : {},
@@ -78,16 +82,13 @@
         $(selector).chosen(config[selector]);
     }
 
-    //iphone type checkbox
-    var elem = document.querySelector('.js-switch');
-    var text = new Switchery(elem, {  color: '#1AB394' });
-
+    
+    
     $('#isOperator').change(function(){
         if($(this).is(":checked")) {
             $("#dates").hide();
             $('#validity_chosen').hide();
         } else {
-            console.log("say bye");
             $("#dates").show();
             $('#validity_chosen').show();
         }
