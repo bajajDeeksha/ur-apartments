@@ -155,7 +155,7 @@ class UsersController extends AppController
             if ($user['auth'] == 0){
                 return $this->redirect(['controller' => 'Apartments', 'action' => 'index']);
             }
-            return $this->redirect($this->Auth->redirectUrl());
+            return $this->redirect(['controller' => 'Users', 'action' => 'dashboard']);
         }
     }
 
