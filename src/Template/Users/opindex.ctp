@@ -27,7 +27,11 @@
                                     <td><?= date('M d, Y', strtotime(+$user->validity.' day', strtotime(date('M d, Y')))) ?></td>
                                     <td><?= h($user->username) ?></td>
                                     <td><?= h($user->email) ?></td>
+                                    <?php if($this->request->session()->read('currentUser')['auth'] > 1): ?>
                                     <td><?= $this->Html->link('', ['controller' => 'Users', 'action' => 'delete',$user->id],['class' => 'fa fa-2x fa-trash']); ?></td>
+                                    <?php else: ?>
+                                    <td></td>
+                                    <?php endif; ?>
                                 </tr>
                                 <?php endforeach; ?>
                                 </tbody>
