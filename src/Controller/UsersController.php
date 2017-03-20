@@ -118,12 +118,13 @@ class UsersController extends AppController
         if($this->request->session()->read('currentUser')['auth'] > 0) {
 
             $user = $this->Users->get($id);
-            if ($user['auth'] > 1){
+            if ($user['auth'] == 1){
                 if ($this->Users->delete($user)) {
                     $this->Flash->success(__('The user has been deleted.'));
                 } else {
                     $this->Flash->error(__('The user could not be deleted. Please, try again.'));
                 }
+                return $this->redirect(['action' => 'opindex']);
             }
         }
         return $this->redirect(['action' => 'index']);
@@ -156,8 +157,13 @@ class UsersController extends AppController
 
     public function dashboard()
     {
+        $this->loadModel('Apartments');
         $this->Auth->config('authError', false);
+        $apartmentCount = $this->Apartments->find('all')->count();
+        $guestCount = $this->Users->find('all')->where(['Users.auth =' => 0])->count();
+        $operatorCount = $this->Users->find('all')->where(['Users.auth =' => 1])->count();
+
         $title = 'Dashboard';
-        $this->set(compact('title'));
+        $this->set(compact('title', 'apartmentCount', 'guestCount', 'operatorCount'));
     }
 }

@@ -13,7 +13,7 @@
                                     <i class="fa fa-home fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge"><?= $apartmentCount ?></div>
                                     <div>Apartment Listings</div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                     <i class="fa fa-users fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge"><?= $guestCount ?></div>
                                     <div>Active Users</div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     <i class="fa fa-handshake-o fa-3x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">4</div>
+                                    <div class="huge"><?= $operatorCount ?></div>
                                     <div>Operators</div>
                                 </div>
                             </div>
