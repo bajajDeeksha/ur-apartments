@@ -1,4 +1,4 @@
-    <div class="row  border-bottom white-bg dashboard-header">
+    <div class="row border-bottom white-bg dashboard-header">
         <h2 align="center">Apartments Information</h2>
     </div>
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -66,7 +66,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th data-breakpoints="sm">ID</th>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th data-breakpoints="xs sm md">Prefecture</th>
                                 <th data-breakpoints="xs sm md">Ward</th>
@@ -101,11 +101,9 @@
 
                         $('#isOperator').change(function(){
                             if($(this).is(":checked")) {
-                                console.log("say hi");
                                 $(".btn-table-detail").css('display','none');
                                 $(".btn-table-delete").css('display','block');
                             } else {
-                                console.log("say bye");
                                 $(".btn-table-detail").css('display','block');
                                 $(".btn-table-delete").css('display','none');
                             }
