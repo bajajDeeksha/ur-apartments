@@ -123,19 +123,21 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         if($this->request->session()->read('currentUser')['auth'] > 0) {
-
             $user = $this->Users->get($id);
-            if ($user['auth'] == 1){
+            if ($user['auth'] == 1 && $this->request->session()->read('currentUser')['auth'] > 1){
                 if ($this->Users->delete($user)) {
                     $this->request->session()->write('flag', 2);
-                } else {
-                    $this->Flash->error(__('The user could not be deleted. Please, try again.'));
                 }
-                $this->set(compact('flag'));
                 return $this->redirect(['action' => 'opindex']);
             }
+            if ($user['auth'] == 0){
+                if ($this->Users->delete($user)) {
+                    $this->request->session()->write('flag', 2);
+                }
+                return $this->redirect(['action' => 'index']);
+            }
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller' => 'Apartments', 'action' => 'index']);
     }
 
     /**

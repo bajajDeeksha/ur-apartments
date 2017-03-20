@@ -4,11 +4,13 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-lg-12">
+                    <?php if (count($users) == 0): ?>
                         <div class="ibox-content">
                             <div class="alert alert-danger text-center">
                                 Sorry There are no Active Users currently. Please <a class="alert-link" href="#">Click Here</a> to Add Users. 
                             </div>
                         </div>
+                    <?php else: ?>    
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Users. </p>
                             <p> To go to Operatores Information <a href=""> CLICK HERE </a> 
@@ -37,16 +39,23 @@
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
-                            <script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+            <script>
                                 var flag = "<?php echo $flag; ?>";
-                                if (flag == 1) {
-                                    aptAdded();
-                                } else if  (flag==2) {
-                                    aptDeleted();
-                                } else {
-                                    console.log("do nothing");
-                                }
-                                function aptAdded (){
+                                    if (flag == 1) {
+                                        operatorAdded();
+                                        <?php $this->request->session()->delete('flag'); ?>
+                                    } else if  (flag == 2) {
+                                        operatorDeleted();
+                                        <?php $this->request->session()->delete('flag'); ?>
+                                    } else {
+                                        console.log("do nothing");
+                                    }
+                                function operatorAdded (){
                                     setTimeout(function() {
                                     toastr.options = {
                                         closeButton: true,
@@ -57,7 +66,7 @@
                                     toastr.success('User Has Been Added');
                                 }, 1300);
                                 };
-                                function aptDeleted (){
+                                function operatorDeleted (){
                                     setTimeout(function() {
                                     toastr.options = {
                                         closeButton: true,
@@ -71,7 +80,3 @@
                                 //Calling foo-table 
                                 $('.table').footable();
                             </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
