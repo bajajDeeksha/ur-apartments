@@ -28,7 +28,7 @@ class ApartmentsController extends AppController
         $apartments = $this->paginate($this->Apartments);
 
         if ($this->request->is('post')){
-            $this->request->session()->delete('flagApt');
+            $this->request->session()->delete('flag');
             $this->loadModel('Areas');
             $data = $this->request->data;
             if ($data['selected_pref'] && empty($data['ward'])){
@@ -46,32 +46,6 @@ class ApartmentsController extends AppController
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
             $apartments = $this->paginate($apartments);
-
-            
-//            if (empty($data['selected_pref'])){
-//                $data['selected_pref'] = '';
-//            } else {
-//                $prefecture = $data['selected_pref'];
-//            }
-//            if (empty($data['ward'])){
-//                $this->paginate = [
-//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
-//                    'order' => ['Contracts.id' => 'DESC'],
-//                ];
-//                $data['ward'] = '';
-//            } else {
-//                $this->paginate = [
-//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
-//                    'order' => ['Contracts.id' => 'DESC'],
-//                ];
-//                $ward = $data['ward'];
-//            }
-//
-//            $apartments = $this->paginate($this->Apartments->getSearch($data));
-            
-            
-            
-            
         }
 
         $modelPlan = Apartment::MODEL;
