@@ -149,9 +149,8 @@ class UsersController extends AppController
 
             $user = $this->Auth->identify();
             $this->request->session()->write('currentUser',$user);
-                $this->Auth->setUser($user);
-                // ログイン時のリダイレクト
-                return $this->redirect($this->Auth->redirectUrl());
+            $this->Auth->setUser($user);
+            return $this->redirect($this->Auth->redirectUrl());
             //$this->Flash->error('Login Failed, Please check Username and Password');
         }
     }
