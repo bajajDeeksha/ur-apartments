@@ -63,6 +63,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="ibox-content">
+                        <div class="alert alert-danger text-center">
+                            Sorry there were No Apartments found in your given criteria. Please Search for different Wards.
+                        </div>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>

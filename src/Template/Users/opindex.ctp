@@ -4,6 +4,11 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="ibox-content">
+                            <div class="alert alert-danger text-center">
+                                Sorry There are no Active Operators currently. Please <a class="alert-link" href="#">Click Here</a> to Add Operators. 
+                            </div>
+                        </div>
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Operators. </p>
                             <p> To go to Users Information <a href=""> CLICK HERE </a> 
