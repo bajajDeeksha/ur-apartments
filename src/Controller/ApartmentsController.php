@@ -48,31 +48,6 @@ class ApartmentsController extends AppController
             }
             $apartments = $this->paginate($apartments);
             $search = 1;
-            
-//            if (empty($data['selected_pref'])){
-//                $data['selected_pref'] = '';
-//            } else {
-//                $prefecture = $data['selected_pref'];
-//            }
-//            if (empty($data['ward'])){
-//                $this->paginate = [
-//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
-//                    'order' => ['Contracts.id' => 'DESC'],
-//                ];
-//                $data['ward'] = '';
-//            } else {
-//                $this->paginate = [
-//                    'contain' => ['Clients', 'Users', 'CategoryL', 'CategoryM', 'CategoryS'],
-//                    'order' => ['Contracts.id' => 'DESC'],
-//                ];
-//                $ward = $data['ward'];
-//            }
-//
-//            $apartments = $this->paginate($this->Apartments->getSearch($data));
-            
-            
-            
-            
         }
 
         $modelPlan = Apartment::MODEL;
