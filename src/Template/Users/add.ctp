@@ -15,6 +15,8 @@
                             <label class="control-label"> Is The User an Operator </label>
                             <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isOperator', 'label' => false]); ?>
                         </div>
+                        <?php else: ?>
+                        <?= $this->Form->checkbox('auth', ['hidden' => true, 'default' => 0]); ?>
                         <?php endif; ?>
                         <div class="form-group"><label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">

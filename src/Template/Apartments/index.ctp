@@ -108,28 +108,7 @@
                         </tbody>
                     </table>
                     <script>
-                    $(document).ready(function() {
-                            setTimeout(function() {
-                            toastr.options = {
-                                closeButton: true,
-                                progressBar: true,
-                                showMethod: 'slideDown',
-                                timeOut: 6000
-                            };
-                            toastr.error('Apartment Has Been Deleted');
-                        }, 1300);
-                        });
-                        $(document).ready(function() {
-                            setTimeout(function() {
-                            toastr.options = {
-                                closeButton: true,
-                                progressBar: true,
-                                showMethod: 'slideDown',
-                                timeOut: 6000
-                            };
-                            toastr.success('Apartment Has Been Added');
-                        }, 1300);
-                        });
+                        
                         $(window).bind("load", function() {
                             console.log("say Hi");
                             $('#isDelete').attr('checked',false);
@@ -158,6 +137,38 @@
                         }
                         //Calling foo-table 
                         $('.table').footable();
+                </script>
+                <script>
+                        var flag = "<?php echo $flag; ?>";
+                        if (flag == 1) {
+                            aptAdded();
+                        } else if  (flag==2) {
+                            aptDeleted();
+                        } else {
+                            console.log("do nothing");
+                        }
+                        function aptAdded (){
+                            setTimeout(function() {
+                            toastr.options = {
+                                closeButton: true,
+                                progressBar: true,
+                                showMethod: 'slideDown',
+                                timeOut: 6000
+                            };
+                            toastr.success('Apartment Has Been Added');
+                        }, 1300);
+                        };
+                        function aptDeleted (){
+                            setTimeout(function() {
+                            toastr.options = {
+                                closeButton: true,
+                                progressBar: true,
+                                showMethod: 'slideDown',
+                                timeOut: 6000
+                            };
+                            toastr.error('Apartment Has Been Deleted');
+                        }, 1300);
+                        };
                     </script>
                 </div>
             </div>

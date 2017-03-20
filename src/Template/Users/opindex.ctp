@@ -42,18 +42,15 @@
                                 </tbody>
                             </table>
                             <script>
-                                function operatorAdded {
-                                    setTimeout(function() {
-                                    toastr.options = {
-                                        closeButton: true,
-                                        progressBar: true,
-                                        showMethod: 'slideDown',
-                                        timeOut: 6000
-                                    };
-                                    toastr.error('Operator Has Been Deleted');
-                                }, 1300);
-                                };
-                                function operatorDeleted {
+                                var flag = "<?php echo $flag; ?>";
+                                    if (flag == 1) {
+                                        operatorAdded();
+                                    } else if  (flag==2) {
+                                        operatorDeleted();
+                                    } else {
+                                        console.log("do nothing");
+                                    }
+                                function operatorAdded (){
                                     setTimeout(function() {
                                     toastr.options = {
                                         closeButton: true,
@@ -62,6 +59,17 @@
                                         timeOut: 6000
                                     };
                                     toastr.success('Operator Has Been Added');
+                                }, 1300);
+                                };
+                                function operatorDeleted (){
+                                    setTimeout(function() {
+                                    toastr.options = {
+                                        closeButton: true,
+                                        progressBar: true,
+                                        showMethod: 'slideDown',
+                                        timeOut: 6000
+                                    };
+                                    toastr.error('Operator Has Been Deleted');
                                 }, 1300);
                                 };
                                 //Calling foo-table 
