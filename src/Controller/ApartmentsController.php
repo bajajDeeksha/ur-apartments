@@ -20,6 +20,7 @@ class ApartmentsController extends AppController
      */
     public function index()
     {
+        $flag = $this->request->session()->read('flagApt');
         $title = 'Apartment|List';
         $this->paginate = [
             'contain' => ['Areas']
@@ -27,6 +28,7 @@ class ApartmentsController extends AppController
         $apartments = $this->paginate($this->Apartments);
 
         if ($this->request->is('post')){
+            $this->request->session()->delete('flagApt');
             $this->loadModel('Areas');
             $data = $this->request->data;
             if ($data['selected_pref'] && empty($data['ward'])){
@@ -74,7 +76,7 @@ class ApartmentsController extends AppController
 
         $modelPlan = Apartment::MODEL;
         $areas = $this->Apartments->Areas->find('all')->toArray();
-        $this->set(compact('apartments', 'title', 'modelPlan', 'areas'));
+        $this->set(compact('apartments', 'title', 'modelPlan', 'areas', 'flag'));
         $this->set('_serialize', ['apartments']);
     }
 
@@ -152,7 +154,7 @@ class ApartmentsController extends AppController
                     $apartment->facilities = implode(',', $this->request->data['facilities']);
                 }
                 if ($this->Apartments->save($apartment)) {
-
+                    $this->request->session()->write('flagApt', 1);
                     $this->Flash->success(__('The apartment has been saved.'));
 
                     return $this->redirect(['action' => 'index']);
@@ -197,6 +199,7 @@ class ApartmentsController extends AppController
                 $this->deleteImage('image2', $apartment['image2']);
                 $this->deleteImage('image3', $apartment['image3']);
                 $this->deleteImage('image4', $apartment['image4']);
+                $this->request->session()->write('flagApt', 2);
                 $this->Flash->success(__('The apartment has been deleted.'));
             } else {
                 $this->Flash->error(__('The apartment could not be deleted. Please, try again.'));

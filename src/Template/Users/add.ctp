@@ -6,10 +6,10 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Fill the form with Users' Information</h5>
+                    <h5>Fill the form with User's Information</h5>
                 </div>
                 <div class="ibox-content">
-                    <?= $this->Form->create($user, ['class' => 'form-horizontal']); ?>
+                    <?= $this->Form->create($user, ['id' => 'form' , 'class' => 'form-horizontal']); ?>
                         <?php if($this->request->session()->read('currentUser')['auth'] > 1): ?>
                         <div class="form-group" align="right">
                             <label class="control-label"> Is The User an Operator </label>
@@ -20,18 +20,18 @@
                         <?php endif; ?>
                         <div class="form-group"><label class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
-                                <?= $this->Form->control('name', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Enter the name', 'label' => false]); ?>
+                                <?= $this->Form->control('name', ['class' => 'form-control', 'required'=> 'true', 'type' => 'text', 'placeholder' => 'Enter the name', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-10">
-                                <?= $this->Form->control('username', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Enter the Username', 'label' => false]); ?>
+                                <?= $this->Form->control('username', ['class' => 'form-control', 'required'=> 'true', 'type' => 'text', 'placeholder' => 'Enter the Username', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Password </label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <?= $this->Form->control('password', ['class' => 'form-control', 'name' => 'password', 'data-size' => 10, 'type' => 'text', 'data-character-set' => 'a-z,A-Z,0-9,#', 'rel' => 'gp','placeholder' => 'Enter the Password', 'label' => false]); ?>
+                                    <?= $this->Form->control('password', ['class' => 'form-control', 'required'=> 'true', 'name' => 'password', 'data-size' => 10, 'type' => 'text', 'data-character-set' => 'a-z,A-Z,0-9,#', 'rel' => 'gp','placeholder' => 'Enter the Password', 'label' => false]); ?>
                                     <span class="input-group-btn">
                                         <?= $this->Form->button('<i class="fa fa-magic" aria-hidden="true"></i>', ['type'=> 'button', 'class' => 'btn btn-primary getNewPass']); ?>
                                     </span>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <?= $this->Form->control('email', ['class' => 'form-control', 'type' => 'email', 'placeholder' => 'Enter the Email Address', 'label' => false]); ?>
+                                <?= $this->Form->control('email', ['class' => 'form-control', 'type' => 'email', 'required'=> 'true','placeholder' => 'Enter the Email Address', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group" id="dates"><label class="col-sm-2 control-label">Validity</label>
@@ -68,7 +68,12 @@
         </div>
     </div>
 </div>
+<?= $this->Html->script('plugins/validate/jquery.validate.min.js') ?>
 <script>
+
+    $(document).ready(function(){
+        $("#form").validate();
+    });
     $(window).bind("load", function() {
         $('#isOperator').attr('checked',false);
         var elem = document.querySelector('.js-switch');
@@ -118,9 +123,9 @@
         if($.inArray('0-9', dataSet) >= 0){
             possible += '0123456789';
         }
-//        if($.inArray('#', dataSet) >= 0){
-//            possible += '![]{}()%&*$#^<>~@|';
-//        }
+        //if($.inArray('#', dataSet) >= 0){
+        //possible += '![]{}()%&*$#^<>~@|';
+        //}
         var text = '';
         for(var i=0; i < $(id).attr('data-size'); i++) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));

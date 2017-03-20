@@ -43,6 +43,13 @@
                                     </div>
                                 </div>
                                 <?php endif; ?>
+                                <?php if($apartment->image4): ?>
+                                <div>
+                                    <div class="image-imitation">
+                                        <?= $this->Html->image('/img/uploads/image4/'.$apartment->image4, ['class' => 'img-responsive', 'onclick' => 'openModal();currentSlide(4)']); ?>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -124,6 +131,12 @@
     <?php if($apartment->image3): ?>
     <div class="mySlides">
         <?= $this->Html->image('/img/uploads/image3/'.$apartment->image3, ['class' => 'img-responsive']); ?>
+    </div>
+    <?php endif; ?>
+
+    <?php if($apartment->image4): ?>
+    <div class="mySlides">
+        <?= $this->Html->image('/img/uploads/image4/'.$apartment->image4, ['class' => 'img-responsive']); ?>
     </div>
     <?php endif; ?>
 

@@ -26,6 +26,7 @@ class UsersController extends AppController
     public function index()
     {
         if($this->request->session()->read('currentUser')['auth'] > 0) {
+            $flag = $this->request->session()->read('flag');
             $this->paginate = [
                 'conditions' => [
                     'Users.auth' => 0
@@ -34,7 +35,7 @@ class UsersController extends AppController
             $users = $this->paginate($this->Users);
             $title = 'User|List';
 
-            $this->set(compact('users', 'title'));
+            $this->set(compact('users', 'title', 'flag'));
             $this->set('_serialize', ['users']);
         } else {
             return $this->redirect(['controller'=>'Apartments', 'action' => 'index']);
@@ -49,6 +50,7 @@ class UsersController extends AppController
     public function opindex()
     {
         if($this->request->session()->read('currentUser')['auth'] > 0) {
+            $flag = $this->request->session()->read('flag');
             $this->paginate = [
             'conditions' => [
                 'Users.auth' => 1
@@ -57,7 +59,7 @@ class UsersController extends AppController
             $users = $this->paginate($this->Users);
             $title = 'User|List|operators';
 
-            $this->set(compact('users', 'title'));
+            $this->set(compact('users', 'title', 'flag'));
             $this->set('_serialize', ['users']);
         } else {
             return $this->redirect(['controller'=>'Apartments', 'action' => 'index']);
@@ -85,7 +87,7 @@ class UsersController extends AppController
                     }
                 }
                 if ($this->Users->save($user)) {
-                    $this->Flash->success(__('The user has been saved.'));
+                    $this->request->session()->write('flag', 1);
                     if ($user->auth == 0) {
                         $email = new Email();
                         $email
@@ -104,7 +106,7 @@ class UsersController extends AppController
                 }
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
-            $this->set(compact('user', 'auth', 'title'));
+            $this->set(compact('user', 'auth', 'title', 'flag'));
             $this->set('_serialize', ['user']);
         } else {
             return $this->redirect(['controller'=>'Apartments', 'action' => 'index']);
@@ -125,10 +127,11 @@ class UsersController extends AppController
             $user = $this->Users->get($id);
             if ($user['auth'] == 1){
                 if ($this->Users->delete($user)) {
-                    $this->Flash->success(__('The user has been deleted.'));
+                    $this->request->session()->write('flag', 2);
                 } else {
                     $this->Flash->error(__('The user could not be deleted. Please, try again.'));
                 }
+                $this->set(compact('flag'));
                 return $this->redirect(['action' => 'opindex']);
             }
         }

@@ -15,6 +15,7 @@
     <?= $this->Html->css('customize.css') ?>
     <?= $this->Html->css('dashboard.css') ?>
     <?= $this->Html->css('plugins/switchery/switchery.css') ?>
+    <?= $this->Html->css('plugins/toastr/toastr.min.css') ?>
 
 </head>
 <body>
@@ -93,6 +94,7 @@
     <?= $this->Html->script('plugins/metisMenu/jquery.metisMenu.js') ?>
     <?= $this->Html->script('plugins/pace/pace.min.js') ?>
     <?= $this->Html->script('plugins/jquery-ui/jquery-ui.min.js') ?>
+    <?= $this->Html->script('plugins/toastr/toastr.min.js') ?>
     <!-- Switchery -->
     <?= $this->Html->script('plugins/switchery/switchery.js') ?>
     <!-- iCheck -->

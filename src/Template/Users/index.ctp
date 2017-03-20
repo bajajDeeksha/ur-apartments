@@ -4,6 +4,11 @@
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="ibox-content">
+                            <div class="alert alert-danger text-center">
+                                Sorry There are no Active Users currently. Please <a class="alert-link" href="#">Click Here</a> to Add Users. 
+                            </div>
+                        </div>
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Users. </p>
                             <p> To go to Operatores Information <a href=""> CLICK HERE </a> 
@@ -33,6 +38,36 @@
                                 </tbody>
                             </table>
                             <script>
+                                var flag = "<?php echo $flag; ?>";
+                                if (flag == 1) {
+                                    aptAdded();
+                                } else if  (flag==2) {
+                                    aptDeleted();
+                                } else {
+                                    console.log("do nothing");
+                                }
+                                function aptAdded (){
+                                    setTimeout(function() {
+                                    toastr.options = {
+                                        closeButton: true,
+                                        progressBar: true,
+                                        showMethod: 'slideDown',
+                                        timeOut: 6000
+                                    };
+                                    toastr.success('User Has Been Added');
+                                }, 1300);
+                                };
+                                function aptDeleted (){
+                                    setTimeout(function() {
+                                    toastr.options = {
+                                        closeButton: true,
+                                        progressBar: true,
+                                        showMethod: 'slideDown',
+                                        timeOut: 6000
+                                    };
+                                    toastr.error('User Has Been Deleted');
+                                }, 1300);
+                                };
                                 //Calling foo-table 
                                 $('.table').footable();
                             </script>
