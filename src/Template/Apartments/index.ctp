@@ -111,9 +111,9 @@
                                     <?php else: ?>
                                     <td></td>
                                     <?php endif; ?>
-                                    <td><?= h($apartment->size) ?></td>
-                                    <td><?= h($apartment->rent).' ('.h($apartment->service_fee).')' ?></td>
-                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail']); ?>
+                                    <td><?= h($apartment->size).'m2' ?></td>
+                                    <td><?= h($apartment->rent).' + '.h($apartment->service_fee). ' Yen' ?></td>
+                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail', 'target' => '_blank']); ?>
                                         <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
                                 </tr>
                             <?php endforeach; ?>

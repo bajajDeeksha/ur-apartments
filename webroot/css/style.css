@@ -2462,3 +2462,6 @@ ul.clear-list:first-child {
   max-width: 280px;
 }
 }
+.panel-body {
+  font-size: 15px;
+}
