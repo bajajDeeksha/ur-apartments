@@ -3,19 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <title><?= $title ?></title>
 
     <?= $this->Html->css('plugins/chosen/chosen.css') ?>
-    <?= $this->Html->css('plugins/footable/footable.css') ?>
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('../font-awesome/css/font-awesome.css') ?>
     <?= $this->Html->css('animate.css') ?>
     <?= $this->Html->css('style.css') ?>
-    <?= $this->Html->css('customize.css') ?>
-    <?= $this->Html->css('dashboard.css') ?>
     <?= $this->Html->css('plugins/switchery/switchery.css') ?>
     <?= $this->Html->css('plugins/toastr/toastr.min.css') ?>
+    <?= $this->Html->css('plugins/footable/footable.css') ?>
+
+
 
 </head>
 <body>
@@ -93,7 +94,6 @@
     <?= $this->Html->script('plugins/chosen/chosen.jquery.js') ?>
     <?= $this->Html->script('plugins/metisMenu/jquery.metisMenu.js') ?>
     <?= $this->Html->script('plugins/pace/pace.min.js') ?>
-    <?= $this->Html->script('plugins/jquery-ui/jquery-ui.min.js') ?>
     <?= $this->Html->script('plugins/toastr/toastr.min.js') ?>
     <!-- Switchery -->
     <?= $this->Html->script('plugins/switchery/switchery.js') ?>

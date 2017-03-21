@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="panel-heading">
+                            <div class="panel-heading" style="border-bottom: none; margin-bottom:0;">
                                 <h2><i class="fa fa-info" aria-hidden="true"></i> Overview </h2>
                             </div>
                             <table class="table" style="font-size: 15px;">
@@ -62,8 +62,8 @@
                                 <tr><th>Address</th><td><?= h($apartment->area->prefecture).', '.h($apartment->area->ward).', '.h($apartment->address) ?></td></tr>
                                 <tr><th>Prefecture</th><td><?= h($apartment->area->prefecture) ?></td></tr>
                                 <tr><th>Ward</th><td><?= h($apartment->area->ward) ?></td></tr>
-                                <tr><th>Rent</th><td><?= h($apartment->rent) ?></td></tr>
-                                <tr><th>Service Fees</th><td><?= h($apartment->service_fee) ?></td></tr>
+                                <tr><th>Rent</th><td><?= h($apartment->rent). ' Yen' ?></td></tr>
+                                <tr><th>Service Fees</th><td><?= h($apartment->service_fee). ' Yen' ?></td></tr>
                                 <tr><th>Floor</th><td><?= h($apartment->floor) ?></td></tr>
                                 <tr><th>size</th><td><?= h($apartment->size). 'm2' ?></td></tr>
                                 <tr><th>Modle PLan</th><td><?= h($model[$apartment->model_plan]) ?></td></tr>
@@ -77,9 +77,7 @@
                                 <h2 class="panel-title"><i class="fa fa-train"></i> Access</h2>
                             </div>
                             <div class="panel-body">
-                                <ul>
-                                    <li><?= $apartment->traffic ?></li>
-                                </ul>
+                                <span><?= $apartment->traffic?></span>
                             </div>
                             <div class="panel-heading">
                                 <h2 class="panel-title"><i class="fa fa-list-ol"></i> Facilities</h2>
@@ -208,4 +206,10 @@
         }
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script>
+    var numList = " <?php echo $apartment->traffic ?> " ;
+    console.log(numList);
+    var newList = numList.split('•').join('<br/>');
+    console.log(newList);
 </script>

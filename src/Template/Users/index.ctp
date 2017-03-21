@@ -7,13 +7,13 @@
                     <?php if (count($users) == 0): ?>
                         <div class="ibox-content">
                             <div class="alert alert-danger text-center">
-                                Sorry There are no Active Users currently. Please <a class="alert-link" href="#">Click Here</a> to Add Users. 
+                                Sorry There are no Active Users currently. Please <?= $this->Html->link('Click Here', ['action' => 'add'], ['class' => 'alert-link']) ?> to Add Users. 
                             </div>
                         </div>
                     <?php else: ?>    
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Users. </p>
-                            <p> To go to Operatores Information <a href=""> CLICK HERE </a> 
+                            <p> To go to Operatores Information <?= $this->Html->link('CLICK HERE', ['action' => 'opindex']) ?> 
                             <p Style="color: #cc0000;"> PLease note there would be no confimation popup when you click on Trash Button, User would be permanently deleted. </p>
                         </div>
                         <div class="ibox-content">

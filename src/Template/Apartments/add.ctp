@@ -63,11 +63,11 @@
                             <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-md-6">
-                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'onchange'=>"document.getElementById('pref_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select prefecture', 'label' => false]); ?>
+                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'onchange'=>"document.getElementById('pref_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'data-placeholder' => 'Select prefecture', 'label' => false]); ?>
                                             <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'options' => array_column($areas, 'ward'), 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
+                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'options' => array_column($areas, 'ward'), 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'data-placeholder' => 'Select ward', 'label' => false]); ?>
                                         <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content']); ?>
                                     </div>
                                 </div>
@@ -85,9 +85,9 @@
                                     <span class="input-group-addon">Meter Square</span></div>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-sm-2 control-label"> Modal Plan </label>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Model Plan </label>
                             <div class="col-sm-10">
-                                <?= $this->Form->control('model_plan', ['required'=> true,'class' => 'form-control chosen-select', 'options' => $model, 'empty' => true, 'placeholder' => 'Select modal plan', 'label' => false]); ?>
+                                <?= $this->Form->control('model_plan', ['required'=> true,'class' => 'form-control chosen-select', 'options' => $model, 'empty' => true, 'data-placeholder' => 'Select model plan', 'label' => false]); ?>
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label"> Rent </label>
@@ -112,7 +112,7 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Facilities</label>
                             <div class="col-sm-10">
                                 <div>
-                                    <?= $this->Form->control('facilities', ['required'=> true,'class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple' => true, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'placeholder' => 'Select facilities', 'label' => false]); ?>
+                                    <?= $this->Form->control('facilities', ['required'=> true,'class' => 'form-control chosen-select', 'tabindex' => 4, 'multiple' => true, 'multiple style' => 'width:100%;', 'options' => $facilities, 'empty' => true, 'data-placeholder' => 'Select facilities', 'label' => false]); ?>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +191,6 @@
             return false;
         }
     });
-
 
     var config = {
         '.chosen-select'           : {},
