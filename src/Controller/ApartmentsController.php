@@ -126,7 +126,7 @@ class ApartmentsController extends AppController
                 if ($this->request->data['image4']) {
                     $apartment->image4 = $this->Upload->saveImage($apartment['name'], 'image4', $this->request->data['image4']);
                 }
-                if ($apartment->facilities) {
+                if (!empty($this->request->data('facilities'))) {
                     $apartment->facilities = implode(',', $this->request->data['facilities']);
                 }
                 if ($this->Apartments->save($apartment)) {
