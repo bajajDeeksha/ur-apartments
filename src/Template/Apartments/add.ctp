@@ -192,7 +192,6 @@
         }
     });
 
-
     var config = {
         '.chosen-select'           : {},
         '.chosen-select-deselect'  : {allow_single_deselect:true},
