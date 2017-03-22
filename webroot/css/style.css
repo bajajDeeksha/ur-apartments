@@ -2452,16 +2452,32 @@ ul.clear-list:first-child {
 
 .fa-trash {
   color: #d43f3a;
+  cursor: pointer;
 }
 
 .fa-trash:hover {
    color : #d9534f;
 }
 @media (max-width: 768px) {
-.img-logo {
-  max-width: 280px;
-}
+  .img-logo {
+    max-width: 280px;
+  }
 }
 .panel-body {
   font-size: 15px;
 }
+
+#confirm modal {
+  opacity: 0.5;
+}
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  top:30%;
+  width: 300px;
+  height: 150px;
+}
+.modal-body {
+    padding: 20px 15px 10px;
+}
+
