@@ -207,9 +207,3 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<script>
-    var numList = " <?php echo $apartment->traffic ?> " ;
-    console.log(numList);
-    var newList = numList.split('•').join('<br/>');
-    console.log(newList);
-</script>

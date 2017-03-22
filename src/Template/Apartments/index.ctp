@@ -96,6 +96,7 @@
                                 <th data-breakpoints="xs sm md">Size</th>
                                 <th data-breakpoints="xs sm md">Rent</th>
                                 <th></th>
+                                <th><th/>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,16 +114,39 @@
                                     <?php endif; ?>
                                     <td><?= h($apartment->size).'m2' ?></td>
                                     <td><?= h($apartment->rent).' + '.h($apartment->service_fee). ' Yen' ?></td>
-                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail', 'target' => '_blank']); ?>
-                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
+                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail', 'target' => '_blank']); ?></td>
+                                    <td> <button type="button" id="delete-button" class="btn btn-danger btn-table-delete"> Delete </button> </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <div id="confirm" class="modal animate fade-in-right">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>Are you sure you want to delete this?</h3>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                                <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger']); ?>
+                            </div>
+                        </div>
+                    </div>
                     <script>
+                        $( document ).on('click','#delete-button',function(e) {
+                            console.log("hi");
+                            var $form = $(this).closest('form');
+                            e.preventDefault();
+                            console.log("hi1");
+                            $('#confirm').modal({
+                                keyboard: false
+                            })
+                            .one('click', '#delete', function(e) {
+                                $form.trigger('submit');
+                            }); 
+                        });
                         
                         $(window).bind("load", function() {
-                            console.log("say Hi");
                             $('#isDelete').attr('checked',false);
                             var elem = document.querySelector('.js-switch');
                             var text = new Switchery(elem, {  color: '#c9302c' });

@@ -7,14 +7,13 @@
                     <?php if (count($users) == 0): ?>
                         <div class="ibox-content">
                             <div class="alert alert-danger text-center">
-                                Sorry There are no Active Operators currently. Please <a class="alert-link" href="#">Click Here</a> to Add Operators. 
+                                Sorry There are no Active Operators currently. Please <?= $this->Html->link('Click Here', ['action' => 'add'], ['class' => 'alert-link']) ?> to Add Operators. 
                             </div>
                         </div>
                      <?php else: ?>
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Operators. </p>
-                            <p> To go to Users Information <a href=""> CLICK HERE </a> 
-                            <p Style="color: #cc0000;"> PLease note there would be no confimation popup when you click on Trash Button, User would be permanently deleted. </p>
+                            <p> To go to Users Information <?= $this->Html->link('CLICK HERE', ['action' => 'index']) ?>  </p>
                         </div>
                         <div class="ibox-content">
                             <table class="table">
@@ -35,7 +34,7 @@
                                     <td><?= h($user->username) ?></td>
                                     <td><?= h($user->email) ?></td>
                                     <?php if($this->request->session()->read('currentUser')['auth'] > 1): ?>
-                                    <td><?= $this->Html->link('', ['controller' => 'Users', 'action' => 'delete',$user->id],['class' => 'fa fa-2x fa-trash']); ?></td>
+                                        <td> <span type="button" id="delete-button"><i class="fa fa-2x fa-trash"></i></span> </td>
                                     <?php else: ?>
                                     <td></td>
                                     <?php endif; ?>
@@ -43,12 +42,36 @@
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <div id="confirm" class="modal animate fade-in-right">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h3>Are you sure you want to delete this ?</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                                    <?= $this->Html->link('Delete', ['controller' => 'Users', 'action' => 'delete',$user->id],['class' => 'button btn btn-danger']); ?>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
          <?php endif; ?>
              <script>
+             $( document ).on('click','#delete-button',function(e) {
+                    var $form = $(this).closest('form');
+                    e.preventDefault();
+                    console.log("hi1");
+                    $('#confirm').modal({
+                        keyboard: false
+                    })
+                    .one('click', '#delete', function(e) {
+                        $form.trigger('submit');
+                    }); 
+                });
+             
                                 var flag = "<?php echo $flag; ?>";
                                     if (flag == 1) {
                                         operatorAdded();

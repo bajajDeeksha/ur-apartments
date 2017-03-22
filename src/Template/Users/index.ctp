@@ -13,8 +13,7 @@
                     <?php else: ?>    
                         <div class="ibox-title">
                             <p style="font-size:16px; font-weight: 600;"> List of Active Users. </p>
-                            <p> To go to Operatores Information <?= $this->Html->link('CLICK HERE', ['action' => 'opindex']) ?> 
-                            <p Style="color: #cc0000;"> PLease note there would be no confimation popup when you click on Trash Button, User would be permanently deleted. </p>
+                            <p> To go to Operatores Information <?= $this->Html->link('CLICK HERE', ['action' => 'opindex']) ?>  </p>
                         </div>
                         <div class="ibox-content">
                             <table class="table">
@@ -34,49 +33,73 @@
                                     <td><?= date('M d, Y', strtotime(+$user->validity.' day', strtotime(date('M d, Y')))) ?></td>
                                     <td><?= h($user->username) ?></td>
                                     <td><?= h($user->email) ?></td>
-                                    <td><?= $this->Html->link('', ['controller' => 'Users', 'action' => 'delete',$user->id],['class' => 'fa fa-2x fa-trash']); ?></td>
+                                    <td> <span type="button" id="delete-button"><i class="fa fa-2x fa-trash"></i></span> </td>
                                 </tr>
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <div id="confirm" class="modal animate fade-in-right">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h3>Are you sure you want to delete this ?</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                                    <?= $this->Html->link('Delete', ['controller' => 'Users', 'action' => 'delete',$user->id],['class' => 'button btn btn-danger']); ?>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
             <?php endif; ?>
             <script>
-                                var flag = "<?php echo $flag; ?>";
-                                    if (flag == 1) {
-                                        operatorAdded();
-                                        <?php $this->request->session()->delete('flag'); ?>
-                                    } else if  (flag == 2) {
-                                        operatorDeleted();
-                                        <?php $this->request->session()->delete('flag'); ?>
-                                    } else {
-                                        console.log("do nothing");
-                                    }
-                                function operatorAdded (){
-                                    setTimeout(function() {
-                                    toastr.options = {
-                                        closeButton: true,
-                                        progressBar: true,
-                                        showMethod: 'slideDown',
-                                        timeOut: 6000
-                                    };
-                                    toastr.success('User Has Been Added');
-                                }, 1300);
-                                };
-                                function operatorDeleted (){
-                                    setTimeout(function() {
-                                    toastr.options = {
-                                        closeButton: true,
-                                        progressBar: true,
-                                        showMethod: 'slideDown',
-                                        timeOut: 6000
-                                    };
-                                    toastr.error('User Has Been Deleted');
-                                }, 1300);
-                                };
-                                //Calling foo-table 
-                                $('.table').footable();
-                            </script>
+                $( document ).on('click','#delete-button',function(e) {
+                    console.log("hi");
+                    var $form = $(this).closest('form');
+                    e.preventDefault();
+                    console.log("hi1");
+                    $('#confirm').modal({
+                        keyboard: false
+                    })
+                    .one('click', '#delete', function(e) {
+                        $form.trigger('submit');
+                    }); 
+                });
+                var flag = "<?php echo $flag; ?>";
+                    if (flag == 1) {
+                        operatorAdded();
+                        <?php $this->request->session()->delete('flag'); ?>
+                    } else if  (flag == 2) {
+                        operatorDeleted();
+                        <?php $this->request->session()->delete('flag'); ?>
+                    } else {
+                        console.log("do nothing");
+                    }
+                    function operatorAdded (){
+                        setTimeout(function() {
+                        toastr.options = {
+                            closeButton: true,
+                            progressBar: true,
+                            showMethod: 'slideDown',
+                            timeOut: 6000
+                        };
+                        toastr.success('User Has Been Added');
+                    }, 1300);
+                    };
+                    function operatorDeleted (){
+                        setTimeout(function() {
+                        toastr.options = {
+                            closeButton: true,
+                            progressBar: true,
+                            showMethod: 'slideDown',
+                            timeOut: 6000
+                        };
+                        toastr.error('User Has Been Deleted');
+                    }, 1300);
+                    };
+                    //Calling foo-table 
+                    $('.table').footable();
+            </script>
