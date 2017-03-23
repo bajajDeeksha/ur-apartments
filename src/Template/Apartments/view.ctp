@@ -73,11 +73,11 @@
                     </div>
                     <div class="row" style="margin-top: 40px;">
                         <div class="col-md-6">
-                            <div class="panel-heading">
+                            <div class="panel-heading" style="margin-bottom: 0;">
                                 <h2 class="panel-title"><i class="fa fa-train"></i> Access</h2>
                             </div>
-                            <div class="panel-body">
-                                <span><?= $apartment->traffic?></span>
+                            <div class="panel-body" style="padding-top: 0;">
+                                <span class="traffic-test"><?= $apartment->traffic?></span>
                             </div>
                             <div class="panel-heading">
                                 <h2 class="panel-title"><i class="fa fa-list-ol"></i> Facilities</h2>
@@ -88,11 +88,11 @@
                                 <?= h($facility[$fac]). ' |' ?>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="panel-heading">
+                            <div class="panel-heading" style="margin-bottom: 0;">
                                 <h2 class="panel-title"><i class="fa fa-comments"></i> Remarks </h2>
                             </div>
-                            <div class="panel-body" class="" itemprop="description">
-                                <?= h($apartment->remarks) ?>
+                            <div class="panel-body" style="padding-top: 0;">
+                                <span class="remark-test"><?= h($apartment->remarks) ?></span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -147,6 +147,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO0qGyWPhL6tQ4pkLlpUh2A-wF7mLNc5Q" type="text/javascript">
 </script>
 <script>
+    var traffic_test = $('.traffic-test').text();
+    var traffic_result = traffic_test.replace(/\•/g,'<br/> •  ');   
+    $('.traffic-test').html(traffic_result);
+
+    var remark_test = $('.remark-test').text();
+    var remark_result = remark_test.replace(/\•/g,'<br/> •  ');   
+    $('.remark-test').html(remark_result);
+
     //Slick
     $(document).ready(function(){
         $('.product-images').slick({

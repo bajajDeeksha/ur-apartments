@@ -168,11 +168,7 @@ p li, ul li, ol li {
         padding: 10px !important;
     }
 }
-
-
-
-
-    </script>
+</script>
 </head>
 <body>
 <table class="body-wrap">
