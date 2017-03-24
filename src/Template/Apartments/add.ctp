@@ -166,7 +166,7 @@
             rules: {
                prefecture:{
                 required: true
-            }
+                }
             }
         });
     });
