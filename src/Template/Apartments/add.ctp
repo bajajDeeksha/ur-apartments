@@ -161,6 +161,7 @@
 <?= $this->Html->script('plugins/iCheck/icheck.min.js') ?>
 <?= $this->Html->script('plugins/validate/jquery.validate.min.js') ?>
 <script>
+    $.validator.setDefaults({ ignore: ":hidden:not(.chosen-select)" }) //for all select having class .chosen-select
     $(document).ready(function(){
         $("#form").validate({
             rules: {
@@ -176,7 +177,6 @@
             radioClass: 'iradio_square-green',
         });
     });
-
 
     var linestart = function(txt, st) {
         var ls = txt.split("\n");
