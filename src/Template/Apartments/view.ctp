@@ -83,10 +83,14 @@
                                 <h2 class="panel-title"><i class="fa fa-list-ol"></i> Facilities</h2>
                             </div>
                             <div class="panel-body" class="" itemprop="description">
+                                <?php if($facilities[0]): ?>
                                 <?= '| ' ?>
                                 <?php foreach($facilities as $fac): ?>
                                 <?= h($facility[$fac]). ' |' ?>
                                 <?php endforeach; ?>
+                                <?php else: ?>
+                                *No facilities available for now*
+                                <?php endif; ?>
                             </div>
                             <div class="panel-heading" style="margin-bottom: 0;">
                                 <h2 class="panel-title"><i class="fa fa-comments"></i> Remarks </h2>
