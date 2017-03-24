@@ -60,9 +60,16 @@
                                         <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
-                                        <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content', 'multiple' => true]); ?>
+                                        <select multiple = "multiple" name="ward[]" data-placeholder="Select all the Facilities available" class="form-control chosen-select">
+                                            <?php foreach(array_column($areas, 'ward') as $ward): ?>
+                                            <option value="<?php echo $ward; ?>"><?php echo $ward; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
+                                    <!--<div class="col-md-6">-->
+                                        <!--<?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>-->
+                                        <!--<?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content', 'multiple' => true]); ?>-->
+                                    <!--</div>-->
                                     <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                                     <div class="col-xs-12">
                                         <div class="form-group" style="margin-top: 20px;" align="right">
