@@ -158,7 +158,7 @@
     var remark_test = $('.remark-test').text();
     var remark_result = remark_test.replace(/\•/g,'<br/> •  ');   
     $('.remark-test').html(remark_result);
-
+    
     //Slick
     $(document).ready(function(){
         $('.product-images').slick({
