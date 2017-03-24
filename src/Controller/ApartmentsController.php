@@ -32,17 +32,17 @@ class ApartmentsController extends AppController
         if ($this->request->is('post')){
             $this->loadModel('Areas');
             $data = $this->request->data;
-            if ($data['selected_pref'] && empty($data['selected_ward'])){
+            if ($data['selected_pref'] && empty($data['ward'])){
                 $area_id = $this->getAreaID('', $data['selected_pref']);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
 
-            if ($data['selected_pref'] && is_array($data['selected_ward'])){
+            if ($data['selected_pref'] && is_array($data['ward'])){
                 $area_id = $this->getAreaID($data['ward'], $data['selected_pref']);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
             
-            if (!$data['selected_pref'] && is_array($data['selected_ward'])){
+            if (!$data['selected_pref'] && is_array($data['ward'])){
                 $area_id = $this->getAreaID($data['ward'], null);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
@@ -65,27 +65,16 @@ class ApartmentsController extends AppController
         }
 
         if ($prefecture && is_array($ward)){
-            $id = [];
-
-            foreach ($ward as $current_ward){
-                $id = $this->Areas->find()
-                    ->select('Areas.id')
-                    ->where(['Areas.ward' => $current_ward])
-                    ->andWhere(['Areas.prefecture' => $prefecture]);
-            }
-
-            return $id;
+            return $this->Areas->find()
+                ->select('Areas.id')
+                ->where(['Areas.ward IN' => $ward])
+                ->andWhere(['Areas.prefecture' => $prefecture]);
         }
 
         if (!$prefecture && is_array($ward)){
-            $id = [];
-
-            foreach ($ward as $current_ward){
-                $id = $this->Areas->find()
-                    ->select('Areas.id')
-                    ->where(['Areas.ward' => $current_ward])->toArray();
-            }
-            return $id;
+            return $this->Areas->find()
+                ->select('Areas.id')
+                ->where(['Areas.ward IN' => $ward]);
         }
     }
 
