@@ -4,6 +4,13 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
+                <?php if (count($apartments) == 0): ?>
+                    <div class="ibox-content">
+                            <div class="alert alert-danger text-center">
+                                Sorry There are no apartments currently available. 
+                            </div>
+                        </div>
+                <?php else: ?>  
                 <div class="ibox-content">
                     <?= $this->Form->create(); ?>
                         <script type="text/javascript" >
@@ -132,6 +139,7 @@
                             </div>
                         </div>
                     </div>
+                     <?php endif; ?>
                     <script>
                         $( document ).on('click','#delete-button',function(e) {
                             console.log("hi");
