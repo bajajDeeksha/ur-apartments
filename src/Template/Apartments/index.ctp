@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
-                                        <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content']); ?>
+                                        <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content', 'multiple' => true]); ?>
                                     </div>
                                     <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                                     <div class="col-xs-12">
