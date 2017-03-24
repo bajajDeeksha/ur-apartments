@@ -65,16 +65,32 @@ class ApartmentsController extends AppController
         }
 
         if ($prefecture && is_array($ward)){
-            return $this->Areas->find()
-                ->select('Areas.id')
-                ->where(['Areas.ward IN' => $ward])
-                ->andWhere(['Areas.prefecture' => $prefecture]);
+            foreach ($ward as $selected_ward){
+                $id = $this->Areas->find()
+                    ->select('Areas.id')
+                    ->where(['Areas.ward LIKE ' => $selected_ward])
+                    ->andWhere(['Areas.prefecture' => $prefecture]);
+                $data[] = $id->toArray();
+            }
+
+            foreach ($data as $getID){
+                $myData[] = $getID[0]->id;
+            }
+            return $myData;
         }
 
         if (!$prefecture && is_array($ward)){
-            return $this->Areas->find()
-                ->select('Areas.id')
-                ->where(['Areas.ward IN' => $ward]);
+            foreach ($ward as $selected_ward){
+                $id = $this->Areas->find()
+                    ->select('Areas.id')
+                    ->where(['Areas.ward LIKE ' => $selected_ward]);
+                $data[] = $id->toArray();
+            }
+
+            foreach ($data as $getID){
+                $myData[] = $getID[0]->id;
+            }
+            return $myData;
         }
     }
 

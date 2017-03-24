@@ -30,9 +30,7 @@
                     $(".ward").html(html);
                 }
             });
-
         });
-
     });
 </script>
 <div class="apartments form large-9 medium-8 columns content">

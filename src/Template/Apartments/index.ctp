@@ -4,6 +4,13 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
+                <?php if (count($apartments) == 0): ?>
+                    <div class="ibox-content">
+                            <div class="alert alert-danger text-center">
+                                Sorry There are no apartments currently available. 
+                            </div>
+                        </div>
+                <?php else: ?>  
                 <div class="ibox-content">
                     <?= $this->Form->create(); ?>
                         <script type="text/javascript" >
@@ -53,9 +60,16 @@
                                         <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>
-                                        <?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content']); ?>
+                                        <select multiple = "multiple" name="ward[]" data-placeholder="Select all the Facilities available" class="form-control chosen-select">
+                                            <?php foreach(array_column($areas, 'ward') as $ward): ?>
+                                            <option value="<?php echo $ward; ?>"><?php echo $ward; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
+                                    <!--<div class="col-md-6">-->
+                                        <!--<?= $this->Form->control('ward', ['class' => 'form-control chosen-select ward', 'multiple style' => 'width:100%','options' => array_column($areas, 'ward'), 'multiple' => true, 'onchange'=>"document.getElementById('ward_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select ward', 'label' => false]); ?>-->
+                                        <!--<?= $this->Form->control('selected_ward', ['type' => 'hidden', 'id' => 'ward_content', 'multiple' => true]); ?>-->
+                                    <!--</div>-->
                                     <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                                     <div class="col-xs-12">
                                         <div class="form-group" style="margin-top: 20px;" align="right">
@@ -96,6 +110,7 @@
                                 <th data-breakpoints="xs sm md">Size</th>
                                 <th data-breakpoints="xs sm md">Rent</th>
                                 <th></th>
+                                <th><th/>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,16 +128,40 @@
                                     <?php endif; ?>
                                     <td><?= h($apartment->size).'m2' ?></td>
                                     <td><?= h($apartment->rent).' + '.h($apartment->service_fee). ' Yen' ?></td>
-                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail', 'target' => '_blank']); ?>
-                                        <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger btn-table-delete']); ?> </td>
+                                    <td><?= $this->Html->link('Detail', ['controller' => 'Apartments', 'action' => 'view',$apartment->id],['class' => 'button btn btn-primary btn-table-detail', 'target' => '_blank']); ?></td>
+                                    <td> <button type="button" id="delete-button" class="btn btn-danger btn-table-delete"> Delete </button> </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <div id="confirm" class="modal animate fade-in-right">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>Are you sure you want to delete this?</h3>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                                <?= $this->Html->link('Delete', ['controller' => 'Apartments', 'action' => 'delete',$apartment->id],['class' => 'button btn btn-danger']); ?>
+                            </div>
+                        </div>
+                    </div>
+                     <?php endif; ?>
                     <script>
+                        $( document ).on('click','#delete-button',function(e) {
+                            console.log("hi");
+                            var $form = $(this).closest('form');
+                            e.preventDefault();
+                            console.log("hi1");
+                            $('#confirm').modal({
+                                keyboard: false
+                            })
+                            .one('click', '#delete', function(e) {
+                                $form.trigger('submit');
+                            }); 
+                        });
                         
                         $(window).bind("load", function() {
-                            console.log("say Hi");
                             $('#isDelete').attr('checked',false);
                             var elem = document.querySelector('.js-switch');
                             var text = new Switchery(elem, {  color: '#c9302c' });
