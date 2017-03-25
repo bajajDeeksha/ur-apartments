@@ -30,21 +30,30 @@ class ApartmentsController extends AppController
         $apartments = $this->paginate($this->Apartments);
 
         if ($this->request->is('post')){
-            $this->loadModel('Areas');
             $data = $this->request->data;
+            // if (!$data['ward']) {
+            //     $data = '';
+            // }
+            $this->loadModel('Areas');
+
             if ($data['selected_pref'] && empty($data['ward'])){
                 $area_id = $this->getAreaID('', $data['selected_pref']);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
 
-            if ($data['selected_pref'] && is_array($data['ward'])){
+            elseif ($data['selected_pref'] && !empty($data['ward'])){
                 $area_id = $this->getAreaID($data['ward'], $data['selected_pref']);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
             }
             
-            if (!$data['selected_pref'] && is_array($data['ward'])){
+            elseif (!$data['selected_pref'] && !empty($data['ward'])){
                 $area_id = $this->getAreaID($data['ward'], null);
                 $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            }
+
+            else {
+                $data ['ward'] = '';
+                $apartments = $this->Apartments->find('all')->order(['Apartments.id' => 'DESC']);
             }
             $apartments = $this->paginate($apartments);
             $search = 1;
