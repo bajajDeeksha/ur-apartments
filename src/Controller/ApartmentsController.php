@@ -31,29 +31,35 @@ class ApartmentsController extends AppController
 
         if ($this->request->is('post')){
             $data = $this->request->data;
-            // if (!$data['ward']) {
-            //     $data = '';
-            // }
-            $this->loadModel('Areas');
-
-            if ($data['selected_pref'] && empty($data['ward'])){
-                $area_id = $this->getAreaID('', $data['selected_pref']);
-                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            if ($data['famous_area'] == 1) {
+                $apartments = $this->Apartments->find('all')->where(['Apartments.famous_area' => $data['famous_area']])->contain('Areas');
             }
 
-            elseif ($data['selected_pref'] && !empty($data['ward'])){
-                $area_id = $this->getAreaID($data['ward'], $data['selected_pref']);
-                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+            elseif ($data['famous_area'] == 2) {
+                $apartments = $this->Apartments->find('all')->where(['Apartments.famous_area' => $data['famous_area']])->contain('Areas');
             }
-            
-            elseif (!$data['selected_pref'] && !empty($data['ward'])){
-                $area_id = $this->getAreaID($data['ward'], null);
-                $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
-            }
-
             else {
-                $data ['ward'] = '';
-                $apartments = $this->Apartments->find('all')->order(['Apartments.id' => 'DESC']);
+                $this->loadModel('Areas');
+
+                if ($data['selected_pref'] && empty($data['ward'])){
+                    $area_id = $this->getAreaID('', $data['selected_pref']);
+                    $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+                }
+
+                elseif ($data['selected_pref'] && !empty($data['ward'])){
+                    $area_id = $this->getAreaID($data['ward'], $data['selected_pref']);
+                    $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+                }
+
+                elseif (!$data['selected_pref'] && !empty($data['ward'])){
+                    $area_id = $this->getAreaID($data['ward'], null);
+                    $apartments = $this->Apartments->find('all')->where(['Apartments.area_id IN' => $area_id])->contain('Areas');
+                }
+
+                else {
+                    $data ['ward'] = '';
+                    $apartments = $this->Apartments->find('all')->order(['Apartments.id' => 'DESC']);
+                }
             }
             $apartments = $this->paginate($apartments);
             $search = 1;
@@ -117,9 +123,10 @@ class ApartmentsController extends AppController
         ]);
         $title = 'Apartment|View';
         $model = Apartment::MODEL;
+        $famous = Apartment::FAMOUS;
         $facilities = explode(',', $apartment->facilities);
         $facility = Apartment::FACILITIES;
-        $this->set(compact('apartment', 'model', 'facilities', 'facility', 'title'));
+        $this->set(compact('apartment', 'model', 'facilities', 'facility', 'title', 'famous'));
         $this->set('_serialize', ['apartment']);
     }
 

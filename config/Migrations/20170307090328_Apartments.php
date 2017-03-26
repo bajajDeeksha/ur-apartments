@@ -65,6 +65,10 @@ class Apartments extends AbstractMigration
             'default' => null,
             'null' => true,
         ]);
+        $table->addColumn('famous_area', 'integer', [
+            'default' => 0,
+            'limit' => 11,
+        ]);
         $table->addColumn('image1', 'string', [
             'default' => null,
             'limit' => 255,
