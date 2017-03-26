@@ -68,10 +68,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <label style="margin-top: 30px;" class="col-sm-2 control-label">Famous Areas </label>
-                            <div class="col-md-10" style="margin-top: 30px;">
+                        </div>
+                        <div class="form-group" style="margin-top: 30px;">
+                            <label class="col-sm-2 control-label">Famous Areas </label>
+                            <div class="col-md-10">
                                 <?= $this->Form->control('famous_area', ['class' => 'form-control chosen-select ward','options' => ['1' => 'Higashi-Ojima', '2' => 'Nishi-Kasai'], 'empty' => true, 'placeholder' => 'Select area', 'label' => false]); ?>
                             </div>
+                         </div>
+                        <div class="form-group">
                             <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                             <div class="col-xs-12">
                                 <div class="form-group" style="margin-top: 20px;" align="right">
