@@ -38,6 +38,8 @@ class Apartment extends Entity
 
     ];
 
+    const FAMOUS = [1 => 'Higashi-Ojima', 2 => 'Nishi-Kasai'];
+
     const FACILITIES = [
         '1' => 'Elevator',
         '2' => 'Landing Floor Type Elevator',
