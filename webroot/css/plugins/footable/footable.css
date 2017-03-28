@@ -88,6 +88,7 @@ table.footable > tbody > tr.footable-empty > td,
 table.footable > tbody > tr.footable-empty > th,
 table.footable > tbody > tr.footable-detail-row > td,
 table.footable > tbody > tr.footable-detail-row > th {
+	border-bottom: 2px solid;
 	display: table-cell;
 }
 @-webkit-keyframes fooicon-spin-r {
