@@ -192,7 +192,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         map = new google.maps.Map(document.getElementById("map"), myOptions);
-        var pin = "<?php echo '/images/marker1.png'; ?>";
+        var pin = "<?php echo '/images/marker.png'; ?>";
         if (geocoder) {
             geocoder.geocode({
                 'address': address
