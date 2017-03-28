@@ -97,7 +97,7 @@
                                     <span class="input-group-addon">Yen</span></div>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-sm-2 control-label"> Service Fees </label>
+                        <div class="form-group"><label class="col-sm-2 control-label"> Managment Fees </label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <?= $this->Form->control('service_fee', ['required'=> true,'class' => 'form-control', 'min' => 0, 'type' => 'number', 'placeholder' => 'Enter the service fee in yen', 'label' => false]); ?>

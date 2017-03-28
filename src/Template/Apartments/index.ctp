@@ -6,13 +6,13 @@
             <div class="col-lg-12">
                 <?php if (count($apartments) == 0): ?>
                     <div class="ibox-content">
-                            <div class="alert alert-danger text-center">
-                                Sorry There are no apartments currently available. 
-                            </div>
+                        <div class="alert alert-danger text-center">
+                            Sorry There are no apartments currently available. 
                         </div>
+                    </div>
                 <?php else: ?>  
                 <div class="ibox-content">
-                    <?= $this->Form->create(); ?>
+                    <?= $this->Form->create(null, ['class' => 'form-horizontal']); ?>
                         <script type="text/javascript" >
                             $(document).ready(function () {
                                 $(".ward").chosen({
@@ -46,53 +46,52 @@
                                             });
                                         }
                                     });
-
                                 });
                             });
                         </script>
                         <?php if($search == 0): ?>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Prefecture / Ward </label>
-                            <div class="col-sm-10">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'onchange'=>"document.getElementById('pref_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'placeholder' => 'Select prefecture', 'label' => false]); ?>
-                                        <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select multiple = "multiple" name="ward[]" data-placeholder="Select all the Facilities available" class="form-control chosen-select">
-                                            <?php foreach(array_column($areas, 'ward') as $ward): ?>
-                                            <option value="<?php echo $ward; ?>"><?php echo $ward; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Prefecture / Ward </label>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <?= $this->Form->control('prefecture', ['class' => 'form-control chosen-select prefecture', 'options' => array_unique(array_column($areas, 'prefecture')), 'onchange'=>"document.getElementById('pref_content').value=this.options[this.selectedIndex].text", 'empty' => true, 'label' => false]); ?>
+                                            <?= $this->Form->control('selected_pref', ['type' => 'hidden', 'id' => 'pref_content']); ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select multiple = "multiple" name="ward[]" class="form-control chosen-select ward">
+                                                <?php foreach(array_column($areas, 'ward') as $ward): ?>
+                                                <option value="<?php echo $ward; ?>"><?php echo $ward; ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group" style="margin-top: 30px;">
-                            <label class="col-sm-2 control-label">Famous Areas </label>
-                            <div class="col-md-10">
-                                <?= $this->Form->control('famous_area', ['class' => 'form-control chosen-select ward','options' => ['1' => 'Higashi-Ojima', '2' => 'Nishi-Kasai'], 'empty' => true, 'placeholder' => 'Select area', 'label' => false]); ?>
-                            </div>
-                         </div>
-                        <div class="form-group">
-                            <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
-                            <div class="col-xs-12">
-                                <div class="form-group" style="margin-top: 20px;" align="right">
-                                    <label class="control-label"> Enable Deleting options </label>
-                                    <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isDelete', 'label' => false]); ?>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Famous Areas </label>
+                                <div class="col-md-10">
+                                    <?= $this->Form->control('famous_area', ['class' => 'form-control chosen-select','options' => ['1' => 'Higashi-Ojima', '2' => 'Nishi-Kasai'], 'empty' => true, 'placeholder' => 'Select area', 'label' => false]); ?>
                                 </div>
                             </div>
-                            <?php endif; ?>
-                        </div>
-                        <div class="form-group" align="center">
-                            <div class="col-sm-12">
-                                <button id="show" class="btn m-t-md m-b-md btn-primary" type="submit">Search</button>
+                            <div class="form-group">
+                                <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
+                                <div class="col-xs-12">
+                                    <div class="form-group" style="margin-top: 20px;" align="right">
+                                        <label class="control-label"> Enable Deleting options </label>
+                                        <?= $this->Form->checkbox('auth', ['class' => 'js-switch', 'id' => 'isDelete', 'label' => false]); ?>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
                             </div>
-                        </div>
+                            <div class="form-group" align="center">
+                                <div class="col-sm-12">
+                                    <button id="show" class="btn m-t-md m-b-md btn-primary" type="submit">Search</button>
+                                </div>
+                            </div>
                         <?php else: ?>
-                            <?= $this->Html->link('⬅︎ back to Apartments', ['action' => 'index']); ?>
-                            <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
+                        <?= $this->Html->link('⬅︎ back to Apartments', ['action' => 'index']); ?>
+                        <?php if($this->request->session()->read('currentUser')['auth'] > 0): ?>
                                 <div class="col-xs-12">
                                     <div class="form-group" style="margin-top: 20px;" align="right">
                                         <label class="control-label"> Enable Deleting options </label>

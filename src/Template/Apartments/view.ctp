@@ -68,7 +68,7 @@
                                 <tr><th>Prefecture</th><td><?= h($apartment->area->prefecture) ?></td></tr>
                                 <tr><th>Ward</th><td><?= h($apartment->area->ward) ?></td></tr>
                                 <tr><th>Rent</th><td><?= h($apartment->rent). ' Yen' ?></td></tr>
-                                <tr><th>Service Fees</th><td><?= h($apartment->service_fee). ' Yen' ?></td></tr>
+                                <tr><th>Managment Fees</th><td><?= h($apartment->service_fee). ' Yen' ?></td></tr>
                                 <tr><th>Floor</th><td><?= h($apartment->floor) ?></td></tr>
                                 <tr><th>size</th><td><?= h($apartment->size). 'm2' ?></td></tr>
                                 <tr><th>Modle PLan</th><td><?= h($model[$apartment->model_plan]) ?></td></tr>
