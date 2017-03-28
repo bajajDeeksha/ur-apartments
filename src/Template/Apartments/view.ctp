@@ -17,11 +17,13 @@
                                 <?= h($apartment->name) ?>
                             </h1>
                         </div>
+                        <?php if ($famous[$apartment->famous_area]): ?>
                         <div class="col-lg-12">
                             <h4 class="apt-name">
                                 <?= '** '.$famous[$apartment->famous_area].' **' ?>
                             </h4>
                         </div>
+                        <? endif; ?>
                         <div class="col-md-6">
                             <div class="panel-heading">
                                 <h2><i class="fa fa-picture-o" aria-hidden="true"></i> Property Images </h2>
