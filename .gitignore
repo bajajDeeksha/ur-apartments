@@ -1,7 +1,5 @@
-/vendor/*
-/config/app.php
 /tmp/*
 /logs/*
 /.idea/*
 .idea/*
-/.DS_Store
+*/.DS_Store
